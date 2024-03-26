@@ -1,7 +1,8 @@
 const validator = require("validator");
-const { param } = require("../routes/user");
 
 const validate = (params) => {
+  let resultado = false;
+
   let name =
     !validator.isEmpty(params.name) &&
     validator.isLength(params.name, { min: 3, max: undefined }) &&
@@ -9,7 +10,7 @@ const validate = (params) => {
 
   let nick =
     !validator.isEmpty(params.nick) &&
-    validator.isLength(params.nick, { min: 3, max: 60 });
+    validator.isLength(params.nick, { min: 2, max: 60 });
 
   let email =
     !validator.isEmpty(params.email) && validator.isEmail(params.email);
@@ -27,4 +28,15 @@ const validate = (params) => {
       console.log("Validation passed in the surname");
     }
   }
+
+  if (!name || !nick || !email || !password) {
+    throw new Error("The validation hasn´t been passed");
+  } else {
+    console.log("Validation passed");
+    resultado = true;
+  }
+
+  return resultado;
 };
+
+module.exports = validate;

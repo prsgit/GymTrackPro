@@ -1,5 +1,6 @@
 // Importar dependencias
 const express = require("express");
+const check = require("../middlewares/auth");
 
 // Cargar el router
 const router = express.Router();
@@ -8,8 +9,10 @@ const router = express.Router();
 const userController = require("../controllers/user");
 
 //Definir rutas
-router.get("/testing", userController.prueba);
+router.get("/testing", check.auth, userController.prueba);
 router.post("/register", userController.register);
+router.post("/login", userController.login);
+router.get("/profile/:id", check.auth, userController.profile);
 
 // Exportar router
 module.exports = router;

@@ -17,10 +17,12 @@ const userSchema = Schema({
   password: {
     type: String,
     required: true,
+    select: false, //asi evitamos que nos devuelva la password.
   },
   role: {
     type: String,
     default: "role_user",
+    select: false, //asi evitamos que nos devuelva el role.
   },
   image: {
     type: String,
