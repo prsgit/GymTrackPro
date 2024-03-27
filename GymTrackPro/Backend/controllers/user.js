@@ -178,10 +178,109 @@ const profile = async (req, res) => {
   }
 };
 
+//----------------------------------------------------------------------------------------------
+
+const update = async (req, res) => {
+  try {
+    // Recoger datos usuario identificado
+    let userIdentity = req.user;
+
+    // Recoger datos a actualizar
+    let userToUpdate = req.body;
+
+    // Validar datos
+    try {
+      validate(userToUpdate);
+    } catch (error) {
+      return res.status(400).send({
+        status: "error",
+        message: "Validation not passed",
+      });
+    }
+
+    // Comprobar si el usuario existe
+    const users = await User.find({
+      $or: [
+        { email: userToUpdate.email.toLowerCase() },
+        { nick: userToUpdate.nick.toLowerCase() },
+      ],
+    });
+
+    // Comprobar si el usuario existe y no soy yo (el identificado)
+    let userIsset = false;
+    users.forEach((user) => {
+      if (user && user._id != userIdentity.id) userIsset = true;
+    });
+
+    // Si ya existe devuelvo una respuesta
+    if (userIsset) {
+      return res.status(200).send({
+        status: "success",
+        message: "The user already exists",
+      });
+    }
+
+    // Cifrar password si me llega
+    if (userToUpdate.password) {
+      let pwd = await bcrypt.hash(userToUpdate.password, 10);
+      userToUpdate.password = pwd;
+    } else {
+      delete userToUpdate.password;
+    }
+
+    // Buscar usuario en la bd y actualizar datos
+    let userUpdated = await User.findByIdAndUpdate(
+      userIdentity.id,
+      userToUpdate,
+      { new: true }
+    ); // Esto último nos devuelve el objeto actualizado.
+
+    if (!userUpdated) {
+      return res.status(500).send({
+        status: "error",
+        message: "Error when updating",
+      });
+    }
+
+    // Devolver respuesta
+    return res.status(200).send({
+      status: "success",
+      user: userUpdated,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      status: "error",
+      message: "Error when updating",
+    });
+  }
+};
+
+const upload = (req, res) => {
+  //Configuración de subida (multer) está en routes/user.js
+  //y la ponemos en devolver respuesta file:req.file.
+
+  //Recoger fichero de imagen y comprobar si existe
+
+  //Sacar info. de la imagen
+
+  //Comprobar si la extensión es válida
+
+  //Si es correcto guardar la imagen en la bbdd
+
+  //Devolver respuesta
+  return res.status(200).send({
+    status: "success",
+    message: "Upload image method",
+    file: req.file,
+  });
+};
+
 //  exportar acciones
 module.exports = {
   prueba,
   register,
   login,
   profile,
+  update,
+  upload,
 };
