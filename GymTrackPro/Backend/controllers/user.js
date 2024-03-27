@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const validate = require("../helpers/validate");
 const User = require("../models/user");
 const jwt = require("../helpers/jwt");
+const fs = require("fs");
+const path = require("path");
 
 //test de prueba---------------------------------------------------------------------------------------
 const prueba = (req, res) => {
@@ -255,23 +257,95 @@ const update = async (req, res) => {
   }
 };
 
-const upload = (req, res) => {
-  //Configuración de subida (multer) está en routes/user.js
-  //y la ponemos en devolver respuesta file:req.file.
+//------------------------------------------------------------------------------
 
-  //Recoger fichero de imagen y comprobar si existe
+const upload = async (req, res) => {
+  try {
+    // Configuración de subida (multer) está en routes/user.js
+    // y la ponemos en devolver respuesta file:req.file.
 
-  //Sacar info. de la imagen
+    // Recoger fichero de imagen y comprobar si existe
+    if (!req.file) {
+      return res.status(404).send({
+        status: "error",
+        message: "The request doesn't include the image",
+      });
+    }
 
-  //Comprobar si la extensión es válida
+    // Conseguir el nombre del archivo
+    let image = req.file.originalname;
 
-  //Si es correcto guardar la imagen en la bbdd
+    // Sacar info. de la imagen
+    const imageSplit = image.split(".");
+    const extension = imageSplit[1];
 
-  //Devolver respuesta
-  return res.status(200).send({
-    status: "success",
-    message: "Upload image method",
-    file: req.file,
+    // Comprobar si la extensión es válida
+    if (
+      extension != "png" &&
+      extension != "jpg" &&
+      extension != "jpeg" &&
+      extension != "gif"
+    ) {
+      // Borrar archivo
+      const filePath = req.file.path;
+      const fileDeleted = fs.unlinkSync(filePath);
+
+      // Devolver error
+      return res.status(404).send({
+        status: "error",
+        message: "The extension isn't valid",
+      });
+    }
+
+    // Si es correcto, guardar la imagen en la bbdd
+    const userUpdated = await User.findOneAndUpdate(
+      { _id: req.user.id },
+      { image: req.file.filename },
+      { new: true }
+    );
+
+    if (!userUpdated) {
+      return res.status(500).send({
+        status: "error",
+        message: "Error in file upload",
+      });
+    }
+
+    // Devolver respuesta
+    return res.status(200).send({
+      status: "success",
+      user: userUpdated,
+      file: req.file,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send({
+      status: "error",
+      message: "Error in file upload",
+    });
+  }
+};
+
+//---------------------------------------------------------------------------------------
+
+const avatar = (req, res) => {
+  //Sacar el parámetro de la url
+  const file = req.params.file;
+
+  //Montar el path real de la imagen
+  const filePath = "./uploads/avatars/" + file;
+
+  //Comprobar que existe el fichero
+  fs.stat(filePath, (error, exists) => {
+    if (error || !exists) {
+      return res.status(404).send({
+        status: "error",
+        message: "The avatar doesn´t exist",
+      });
+    }
+
+    //Devolver el fichero
+    return res.sendFile(path.resolve(filePath));
   });
 };
 
@@ -283,4 +357,5 @@ module.exports = {
   profile,
   update,
   upload,
+  avatar,
 };
