@@ -26,11 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 const userRoutes = require("./routes/user");
 const typesRoutes = require("./routes/types_of_workouts");
 const workoutsRoutes = require("./routes/workouts");
+const emailRoutes = require("./routes/email");
 
 // Cargar rutas
 app.use("/api/user", userRoutes);
 app.use("/api/types-of-workouts", typesRoutes);
 app.use("/api/workouts", workoutsRoutes);
+app.use("/api/email", emailRoutes);
 
 //Rutas de prueba
 app.get("/testing-route", (req, res) => {
