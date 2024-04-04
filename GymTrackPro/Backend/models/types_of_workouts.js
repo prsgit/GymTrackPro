@@ -6,11 +6,6 @@ const types_of_workoutsSchema = Schema({
     required: true,
     unique: true,
   },
-  type: {
-    type: String,
-    enum: ["Fuerza", "Hipertrofía", "Aeróbico"],
-    required: true,
-  },
 });
 
-module.exports = model("type", types_of_workoutsSchema, "types");
+module.exports = model("Type", types_of_workoutsSchema, "types-workouts");

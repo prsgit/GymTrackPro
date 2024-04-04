@@ -37,7 +37,5 @@ router.post(
   userController.upload
 ); //se pueden pasar varios middlewares con []
 
-router.get("/avatar/:file", userController.avatar);
-
 // Exportar router
 module.exports = router;

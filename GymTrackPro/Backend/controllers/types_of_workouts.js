@@ -1,11 +1,130 @@
-// acción de prueba
-const prueba = (req, res) => {
-  return res.status(200).send({
-    status: "success",
-    message: "Message sent from: controllers/types_of_workouts.js",
-  });
+//Importaciones
+const types_of_workouts = require("../models/types_of_workouts");
+
+// acción guardar tipo de entrenamiento
+const saveTypeWorkout = async (req, res) => {
+  try {
+    // Recoger datos del body
+    const params = req.body;
+
+    // Crear el objeto a guardar
+    const type = new types_of_workouts(params);
+
+    // Guardarlo de forma asíncrona
+    const typeStored = await type.save();
+
+    if (!typeStored) {
+      return res.status(400).send({
+        status: "error",
+        message: "The type of workout hasn't been saved",
+      });
+    }
+
+    res.status(200).send({
+      status: "success",
+      message: "Type of workout saved successfully",
+      type: typeStored,
+    });
+  } catch (error) {
+    res.status(500).send({
+      status: "error",
+      message: "Internal server error",
+    });
+  }
 };
+
+//------------------------------------------------------------------------------------------------------
+
+const oneTypeWorkout = async (req, res) => {
+  try {
+    // Sacar un params por la url
+    const typeId = req.params.id;
+
+    // Buscar type of workout y sacarlo de forma asíncrona
+    const type = await types_of_workouts.findById(typeId);
+
+    if (!type) {
+      return res.status(404).send({
+        status: "error",
+        message: "There is no type of workout",
+      });
+    }
+
+    res.status(200).send({
+      status: "success",
+      type,
+    });
+  } catch (error) {
+    res.status(500).send({
+      status: "error",
+      message: "Internal server error",
+    });
+  }
+};
+
+//-------------------------------------------------------------------------------------------------
+
+const update = async (req, res) => {
+  try {
+    // Recoger id tipo de entrenamiento url
+    const id = req.params.id;
+
+    // Recoger datos body
+    const data = req.body;
+
+    // Buscar y actualizar tipo
+    const updateType = await types_of_workouts.findByIdAndUpdate(id, data, {
+      new: true,
+    });
+
+    if (!updateType) {
+      return res.status(500).send({
+        status: "error",
+        message: "The type of workout hasn't been updated",
+      });
+    }
+
+    res.status(200).send({
+      status: "success",
+      updateType,
+    });
+  } catch (error) {
+    res.status(500).send({
+      status: "error",
+      message: "Internal Server Error",
+    });
+  }
+};
+
+//-------------------------------------------------------------------------------------------------------
+
+const remove = async (req, res) => {
+  //Sacar la id del tipo de la url
+  const idType = req.params.id;
+
+  //Hacer consulta para buscar y eliminar el tipo con un await
+  try {
+    const typeRemoved = await types_of_workouts.findByIdAndDelete(idType);
+
+    //Devolver resultado
+
+    res.status(200).send({
+      status: "success",
+      message: "Type of workout removed",
+      typeRemoved,
+    });
+  } catch (error) {
+    res.status(500).send({
+      status: "error",
+      message: "Internal Server Error",
+    });
+  }
+};
+
 //  exportar acciones
 module.exports = {
-  prueba,
+  saveTypeWorkout,
+  oneTypeWorkout,
+  update,
+  remove,
 };

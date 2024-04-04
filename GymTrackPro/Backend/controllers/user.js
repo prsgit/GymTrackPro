@@ -18,6 +18,7 @@ const prueba = (req, res) => {
 const register = async (req, res) => {
   // Recoger datos de la petición
   let params = req.body;
+  console.log(params);
 
   // Comprobar que que llegan los datos bien
   if (!params.name || !params.nick || !params.email || !params.password) {
@@ -95,6 +96,7 @@ const login = async (req, res) => {
   try {
     // Recoger los params de la petición
     let params = req.body;
+    console.log(params);
 
     // Comprobar que me llegan
     if (!params.email || !params.password) {
@@ -284,7 +286,7 @@ const upload = async (req, res) => {
       extension != "png" &&
       extension != "jpg" &&
       extension != "jpeg" &&
-      extension != "gif"
+      extension != "webp"
     ) {
       // Borrar archivo
       const filePath = req.file.path;
@@ -328,27 +330,6 @@ const upload = async (req, res) => {
 
 //---------------------------------------------------------------------------------------
 
-const avatar = (req, res) => {
-  //Sacar el parámetro de la url
-  const file = req.params.file;
-
-  //Montar el path real de la imagen
-  const filePath = "./uploads/avatars/" + file;
-
-  //Comprobar que existe el fichero
-  fs.stat(filePath, (error, exists) => {
-    if (error || !exists) {
-      return res.status(404).send({
-        status: "error",
-        message: "The avatar doesn´t exist",
-      });
-    }
-
-    //Devolver el fichero
-    return res.sendFile(path.resolve(filePath));
-  });
-};
-
 //  exportar acciones
 module.exports = {
   prueba,
@@ -357,5 +338,4 @@ module.exports = {
   profile,
   update,
   upload,
-  avatar,
 };
