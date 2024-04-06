@@ -29,13 +29,13 @@ const uploads = multer({ storage }); // uploads funciona como middleware(tipo ch
 router.get("/testing", check.auth, userController.prueba);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
-router.get("/profile/:id", check.auth, userController.profile);
 router.put("/update", check.auth, userController.update);
 router.post(
   "/upload",
   [check.auth, uploads.single("file0")],
   userController.upload
 ); //se pueden pasar varios middlewares con []
+router.post("/forgotpassword", check.auth, userController.forgotPassword);
 
 // Exportar router
 module.exports = router;

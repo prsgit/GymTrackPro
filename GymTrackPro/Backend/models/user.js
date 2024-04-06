@@ -28,6 +28,8 @@ const userSchema = Schema({
     type: String,
     default: "default.png",
   },
+  resetPasswordToken: String, // Para almacenar el token de restablecimiento de contraseña.
+  resetPasswordExpires: Date, // Para almacenar la fecha de expiración del token.
   create_at: {
     type: Date,
     default: Date.now,

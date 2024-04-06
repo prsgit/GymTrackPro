@@ -5,6 +5,7 @@ const User = require("../models/user");
 const jwt = require("../helpers/jwt");
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 //test de prueba---------------------------------------------------------------------------------------
 const prueba = (req, res) => {
@@ -18,7 +19,6 @@ const prueba = (req, res) => {
 const register = async (req, res) => {
   // Recoger datos de la petición
   let params = req.body;
-  console.log(params);
 
   // Comprobar que que llegan los datos bien
   if (!params.name || !params.nick || !params.email || !params.password) {
@@ -145,36 +145,6 @@ const login = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).send({
-      status: "error",
-      message: "Internal server error",
-    });
-  }
-};
-
-//-------------------------------------------------------------------------------------------------------
-const profile = async (req, res) => {
-  try {
-    //Recoger id usuario url
-    const id = req.params.id;
-
-    // Consulta para obtener los datos del perfil
-    const userProfile = await User.findById(id);
-
-    if (!userProfile) {
-      return res.status(404).send({
-        status: "error",
-        message: "The user doesn´t exist",
-      });
-    }
-
-    // Devolver resultado
-    return res.status(200).send({
-      status: "success",
-      id,
-      userProfile,
-    });
-  } catch (error) {
     return res.status(500).send({
       status: "error",
       message: "Internal server error",
@@ -328,6 +298,38 @@ const upload = async (req, res) => {
   }
 };
 
+//-------------------------------------------------------------------------------------
+
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Generar el token
+    const token = crypto.randomBytes(20).toString("hex");
+
+    // Buscar al usuario por su correo electrónico
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "No user was found with this email" });
+    }
+
+    // Establecer el token y la expiración
+    user.resetPasswordToken = token;
+    user.resetPasswordExpires = Date.now() + 3600000; // 1 hora
+    await user.save();
+
+    // Mostrar mensaje de restablecimiento de contraseña en la consola
+    console.log(`Password reset message send to: ${user.email}`);
+
+    res.status(200).json({ message: "Password reset email sent" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 //---------------------------------------------------------------------------------------
 
 //  exportar acciones
@@ -335,7 +337,7 @@ module.exports = {
   prueba,
   register,
   login,
-  profile,
   update,
   upload,
+  forgotPassword,
 };
