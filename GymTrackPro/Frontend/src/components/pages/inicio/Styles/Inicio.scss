@@ -1,0 +1,82 @@
+/* Estilos para el carrusel */
+.carousel {
+  width: 100%;
+  max-width: 800px; /* Ancho máximo del carrusel */
+  margin: 20px auto 60px !important; /* Centrar el carrusel horizontalmente */
+
+  .slide {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+
+  /* Estilos para las imágenes dentro del carrusel */
+  .slide img {
+    max-width: 350px;
+    max-height: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+    transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+  }
+
+  .carousel-slider .slide img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
+  }
+
+  .carousel-slider .slide:not(.selected) img {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
+  }
+
+  /* Estilos para los controles de navegación del carrusel */
+  .control-arrow {
+    display: none; /* Ocultar las flechas de navegación */
+  }
+
+  /* Estilos para el indicador de página del carrusel */
+  .thumbs-wrapper {
+    display: none; /* Ocultar los indicadores de página */
+  }
+
+  /* Estilos para la barra de navegación del carrusel */
+  .carousel-status {
+    display: none; /* Ocultar el texto del número de diapositiva */
+    position: relative; /* Establecer posición relativa */
+  }
+
+  /* Media queries para dispositivos específicos */
+
+  /* Tablets y dispositivos más pequeños */
+  @media (max-width: 768px) {
+    .carousel {
+      margin: 10px auto 40px !important; /* Ajustar margen para dispositivos más pequeños */
+    }
+
+    .carousel .slide img {
+      max-width: 250px; /* Reducir el tamaño de la imagen para dispositivos más pequeños */
+    }
+  }
+
+  /* Teléfonos móviles */
+  @media (max-width: 480px) {
+    .carousel {
+      margin: 5px auto 20px !important; /* Ajustar margen para teléfonos móviles */
+    }
+
+    .carousel .slide img {
+      max-width: 150px; /* Reducir aún más el tamaño de la imagen para teléfonos móviles */
+    }
+  }
+
+  /* Pantallas grandes */
+  @media (min-width: 1200px) {
+    .carousel {
+      max-width: 1200px; /* Ancho máximo del carrusel para pantallas grandes */
+      margin: 40px auto 80px !important; /* Ajustar margen para pantallas grandes */
+    }
+
+    .carousel .slide img {
+      max-width: 400px; /* Ajustar el tamaño de la imagen para pantallas grandes */
+    }
+  }
+}

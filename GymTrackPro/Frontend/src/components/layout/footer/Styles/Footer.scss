@@ -1,0 +1,31 @@
+@import "../../../variables/Variables.scss";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 1; /* Establecer un índice de apilamiento más alto */
+
+  a {
+    text-decoration: none;
+    color: $white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $violet;
+    }
+  }
+
+  .icon {
+    color: $white;
+    margin-right: 10px;
+    &:hover {
+      color: $violet;
+      transform: scale(1.1);
+    }
+  }
+}

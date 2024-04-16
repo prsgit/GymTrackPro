@@ -10,6 +10,7 @@ const typesController = require("../controllers/types_of_workouts");
 //Definir rutas
 router.post("/save", typesController.saveTypeWorkout);
 router.get("/type/:id", typesController.oneTypeWorkout);
+router.get("/allTypes", typesController.allTypesWorkout);
 router.put("/update/:id", typesController.update);
 router.delete("/remove/:id", typesController.remove);
 

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+header {
+  color: #ffffff;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Establece posición relativa para que podamos posicionar la imagen */
+}
+header .icon {
+  margin-right: 10px;
+}

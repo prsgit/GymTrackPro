@@ -34,14 +34,6 @@ app.use("/api/types-of-workouts", typesRoutes);
 app.use("/api/workouts", workoutsRoutes);
 app.use("/api/email", emailRoutes);
 
-//Rutas de prueba
-app.get("/testing-route", (req, res) => {
-  return res.status(200).send({
-    name: "Pedro",
-    lastname: "Rueda",
-  });
-});
-
 //Poner el servidor a escuchar peticiones http
 app.listen(port, () => {
   console.log("The node server is listening on port:", port);

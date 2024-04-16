@@ -1,0 +1,30 @@
+import "../footer/css/Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faSquareXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+const Footer = () => {
+  return (
+    <>
+      <footer className="footer">
+        <a href="https://www.instagram.com">
+          <FontAwesomeIcon icon={faInstagram} size="2xl" className="icon" />
+        </a>
+        <a href="https://www.twitter.com">
+          <FontAwesomeIcon
+            icon={faSquareXTwitter}
+            size="2xl"
+            className="icon"
+          />
+        </a>
+        <a href="https://www.linkedin.com">
+          <FontAwesomeIcon icon={faLinkedin} size="2xl" className="icon" />
+        </a>
+        &copy; GymTrackPro - <a href="https://gymtrackpro.es">gymtrackpro.es</a>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;

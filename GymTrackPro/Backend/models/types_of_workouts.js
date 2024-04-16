@@ -4,7 +4,6 @@ const types_of_workoutsSchema = Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
 });
 

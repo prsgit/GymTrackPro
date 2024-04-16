@@ -1,0 +1,80 @@
+// @import "../../../variables/Variables.scss";
+
+// .nav {
+//   background-color: $finn;
+//   height: 100px;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   ul {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     text-align: center;
+//     display: flex;
+//   }
+
+//   li {
+//     display: inline-block;
+//     margin-right: 40px;
+
+//     li:last-child {
+//       margin-right: 0; /* Elimina el margen derecho del último elemento */
+//     }
+//   }
+
+//   a {
+//     text-decoration: none;
+//     color: $white;
+//     transition: transform 0.3s ease;
+
+//     &:hover {
+//       color: $violet;
+//       transform: scale(1.2);
+//     }
+//   }
+// }
+
+@import "../../../variables/Variables.scss";
+
+.nav {
+  background-color: $finn;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+
+    li {
+      display: inline-block;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último elemento */
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+        transition: color 0.3s ease; /* Transición suave del color */
+
+        &:hover {
+          color: $violet; /* Cambiar el color al pasar el cursor */
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
+      }
+    }
+  }
+}
