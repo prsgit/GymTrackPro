@@ -1,13 +1,49 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 header {
   color: #ffffff;
   height: 100px;
   width: 100%;
+  font-family: Poppins;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative; /* Establece posición relativa para que podamos posicionar la imagen */
 }
-header .icon {
-  margin-right: 10px;
+@media screen and (max-width: 767px) {
+  header {
+    height: auto; /* Altura automática para adaptarse al contenido */
+    padding: 10px; /* Espaciado interno */
+    justify-content: flex-start; /* Alinear elementos a la izquierda */
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header .icon {
+    display: none; /* Ocultar el ícono en tabletas y dispositivos pequeños */
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  header header {
+    height: 80px; /* Reducir la altura del encabezado */
+    padding: 0 20px; /* Añadir un poco de espacio interno */
+    justify-content: space-between; /* Alinear elementos a los extremos */
+  }
+  header .icon {
+    margin-right: 0; /* Eliminar el margen derecho del icono */
+  }
+  header .logo {
+    margin-left: 20px; /* Añadir margen izquierdo al logo */
+  }
+}
+@media screen and (min-width: 1441px) {
+  header header {
+    height: 120px; /* Aumentar la altura del encabezado */
+    padding: 0 40px; /* Añadir más espacio interno */
+  }
+  header .icon {
+    margin-right: 20px; /* Restaurar el margen derecho del icono */
+  }
+  header .logo {
+    margin-left: 40px; /* Añadir más margen izquierdo al logo */
+  }
 }

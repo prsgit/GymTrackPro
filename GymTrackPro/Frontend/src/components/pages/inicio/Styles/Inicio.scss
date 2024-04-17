@@ -12,16 +12,16 @@
 
   /* Estilos para las imágenes dentro del carrusel */
   .slide img {
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 340px;
+    max-height: 340px;
     border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
     transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
   }
 
   .carousel-slider .slide img {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
   }
 
   .carousel-slider .slide:not(.selected) img {
@@ -44,39 +44,33 @@
     position: relative; /* Establecer posición relativa */
   }
 
-  /* Media queries para dispositivos específicos */
+  /* Media queries*/
 
-  /* Tablets y dispositivos más pequeños */
-  @media (max-width: 768px) {
+  /* Estilos para dispositivos móviles */
+  @media screen and (max-width: 767px) {
     .carousel {
-      margin: 10px auto 40px !important; /* Ajustar margen para dispositivos más pequeños */
-    }
-
-    .carousel .slide img {
-      max-width: 250px; /* Reducir el tamaño de la imagen para dispositivos más pequeños */
+      max-width: 100%; /* Ancho máximo adaptado para dispositivos móviles */
     }
   }
 
-  /* Teléfonos móviles */
-  @media (max-width: 480px) {
+  /* Estilos para tabletas y dispositivos pequeños */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     .carousel {
-      margin: 5px auto 20px !important; /* Ajustar margen para teléfonos móviles */
-    }
-
-    .carousel .slide img {
-      max-width: 150px; /* Reducir aún más el tamaño de la imagen para teléfonos móviles */
+      max-width: 800px; /* Ancho máximo adaptado para tabletas */
     }
   }
 
-  /* Pantallas grandes */
-  @media (min-width: 1200px) {
+  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
+  @media screen and (min-width: 1025px) and (max-width: 1440px) {
     .carousel {
-      max-width: 1200px; /* Ancho máximo del carrusel para pantallas grandes */
-      margin: 40px auto 80px !important; /* Ajustar margen para pantallas grandes */
+      max-width: 1000px; /* Ancho máximo adaptado para pantallas medianas */
     }
+  }
 
-    .carousel .slide img {
-      max-width: 400px; /* Ajustar el tamaño de la imagen para pantallas grandes */
+  /* Estilos para pantallas grandes (escritorios) */
+  @media screen and (min-width: 1441px) {
+    .carousel {
+      max-width: 1200px; /* Ancho máximo adaptado para pantallas grandes */
     }
   }
 }

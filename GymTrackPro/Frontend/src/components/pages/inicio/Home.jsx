@@ -1,15 +1,15 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../inicio/css/Inicio.css";
-import image1 from "../../../assets/image/carousel/image1.jpeg";
-import image2 from "../../../assets/image/carousel/image2.jpeg";
-import image3 from "../../../assets/image/carousel/image3.jpeg";
-import image4 from "../../../assets/image/carousel/image4.jpeg";
-import image5 from "../../../assets/image/carousel/image5.jpeg";
-import image6 from "../../../assets/image/carousel/image6.jpeg";
-import image7 from "../../../assets/image/carousel/image7.jpeg";
-import image8 from "../../../assets/image/carousel/image8.jpeg";
-import image9 from "../../../assets/image/carousel/image9.jpeg";
+import image1 from "../../../assets/carousel/image1.jpeg";
+import image2 from "../../../assets/carousel/image2.jpeg";
+import image3 from "../../../assets/carousel/image3.jpeg";
+import image4 from "../../../assets/carousel/image4.jpeg";
+import image5 from "../../../assets/carousel/image5.jpeg";
+import image6 from "../../../assets/carousel/image6.jpeg";
+import image7 from "../../../assets/carousel/image7.jpeg";
+import image8 from "../../../assets/carousel/image8.jpeg";
+import image9 from "../../../assets/carousel/image9.jpeg";
 
 const Home = () => {
   return (

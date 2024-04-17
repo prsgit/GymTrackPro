@@ -1,48 +1,11 @@
-// @import "../../../variables/Variables.scss";
-
-// .nav {
-//   background-color: $finn;
-//   height: 100px;
-//   width: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   ul {
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//     text-align: center;
-//     display: flex;
-//   }
-
-//   li {
-//     display: inline-block;
-//     margin-right: 40px;
-
-//     li:last-child {
-//       margin-right: 0; /* Elimina el margen derecho del último elemento */
-//     }
-//   }
-
-//   a {
-//     text-decoration: none;
-//     color: $white;
-//     transition: transform 0.3s ease;
-
-//     &:hover {
-//       color: $violet;
-//       transform: scale(1.2);
-//     }
-//   }
-// }
-
 @import "../../../variables/Variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 .nav {
   background-color: $finn;
   height: 100px;
   width: 100%;
+  font-family: Poppins;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +38,48 @@
       &:hover {
         transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
       }
+    }
+  }
+
+  // Media queries
+
+  /* Estilos para dispositivos móviles */
+  @media screen and (max-width: 767px) {
+    height: auto; /* Altura automática para acomodar el contenido */
+    padding: 10px; /* Espaciado interno */
+    justify-content: flex-start; /* Alinear elementos a la izquierda */
+
+    ul {
+      flex-direction: column; /* Alinear elementos verticalmente */
+      align-items: flex-start; /* Alinear elementos a la izquierda */
+      margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
+    }
+
+    li {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* Estilos para tabletas y dispositivos pequeños */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    ul {
+      justify-content: space-evenly; /* Espaciado uniforme entre elementos */
+    }
+  }
+
+  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
+  @media screen and (min-width: 1025px) and (max-width: 1440px) {
+    ul {
+      justify-content: space-between; /* Espaciado automático entre elementos */
+    }
+  }
+
+  /* Estilos para pantallas grandes (escritorios) */
+  @media screen and (min-width: 1441px) {
+    ul {
+      justify-content: center; /* Alinear elementos al centro */
     }
   }
 }

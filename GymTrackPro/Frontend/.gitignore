@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignorar archivos Sass de la carpeta Styles
+/Styles/*.scss
