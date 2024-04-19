@@ -1,0 +1,58 @@
+@import "../../../../variables/Variables.scss";
+
+.register-form {
+  font-family: Poppins;
+  padding-bottom: 50px;
+  max-width: 400px;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  background-color: $pale-purple;
+  border-radius: 8px;
+  box-shadow: 0 0 10p $pale-purple;
+  display: flex; /* Utiliza flexbox para centrar los elementos */
+  flex-direction: column; /* Alinea los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos */
+  align-items: center; /* Centra horizontalmente los elementos */
+}
+
+.main-content {
+  margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
+}
+
+.register {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.register label {
+  display: block;
+  font-weight: bold;
+}
+
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="password"] {
+  background-color: $white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid $violet;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: $success;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: $success-hover;
+}

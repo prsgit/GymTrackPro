@@ -29,14 +29,15 @@
         text-decoration: none;
         color: $white;
         transition: color 0.3s ease; /* Transición suave del color */
-
-        &:hover {
-          color: $violet; /* Cambiar el color al pasar el cursor */
-        }
       }
 
       &:hover {
         transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
+      }
+
+      .icon {
+        color: $white;
+        padding-right: 2px;
       }
     }
   }
@@ -59,6 +60,10 @@
       display: block;
       margin-right: 0;
       margin-bottom: 10px;
+    }
+
+    li .icon {
+      margin-right: 3px; /* Espacio entre el icono y el texto */
     }
   }
 

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.login-form {
+  font-family: Poppins;
+  padding-bottom: 50px;
+  max-width: 400px;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  background-color: #f2d7ee;
+  border-radius: 8px;
+  box-shadow: 0 0 10p #f2d7ee;
+  display: flex; /* Utiliza flexbox para centrar los elementos */
+  flex-direction: column; /* Alinea los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos */
+  align-items: center; /* Centra horizontalmente los elementos */
+}
+.login-form .login {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.login-form .login label {
+  display: block;
+  font-weight: bold;
+}
+.login-form .login input[type=text],
+.login-form .login input[type=email] {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #a5668b;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.login-form .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-form .btn:hover {
+  background-color: #45a049;
+}

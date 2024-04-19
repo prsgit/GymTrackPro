@@ -1,0 +1,41 @@
+@import "../../../../variables/Variables.scss";
+
+.error {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Poppins;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 5px solid $white;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    color: $error;
+  }
+
+  p {
+    margin-top: 20px;
+    color: $error;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: $finn;
+    color: #fff;
+    border: 1px solid $finn;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  button:hover {
+    background-color: $violet;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}

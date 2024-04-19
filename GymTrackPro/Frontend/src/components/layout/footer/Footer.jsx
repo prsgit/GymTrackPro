@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <a href="https://www.instagram.com">
+        <a href="https://www.instagram.com/irongymalhaurin">
           <FontAwesomeIcon icon={faInstagram} size="2xl" className="icon" />
         </a>
         <a href="https://www.twitter.com">
@@ -18,10 +18,11 @@ const Footer = () => {
             className="icon"
           />
         </a>
-        <a href="https://www.linkedin.com">
+        <a href="https://www.linkedin.com/">
           <FontAwesomeIcon icon={faLinkedin} size="2xl" className="icon" />
         </a>
-        &copy; GymTrackPro - <a href="https://gymtrackpro.es">gymtrackpro.es</a>
+        &copy; GymTrackPro - Contacto:
+        <a href="https://gymtrackpro.es"> gymtrackpro.es</a>
       </footer>
     </>
   );
