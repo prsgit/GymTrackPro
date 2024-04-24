@@ -6,6 +6,7 @@ const jwt = require("../helpers/jwt");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const user = require("../models/user");
 
 //test de prueba---------------------------------------------------------------------------------------
 const prueba = (req, res) => {
@@ -142,6 +143,38 @@ const login = async (req, res) => {
       message: "Login method",
       user: identityUser,
       token,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send({
+      status: "error",
+      message: "Internal server error",
+    });
+  }
+};
+
+//---------------------------------------------------------------------------------------------
+
+const profile = async (req, res) => {
+  try {
+    // Recoger id del usuario
+    const id = req.params.id;
+
+    // Consulta para sacar los datos del perfil
+    const user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).send({
+        status: "error",
+        message: "The user doesn't exist",
+      });
+    }
+
+    // Devolver resultado
+    return res.status(200).send({
+      status: "success",
+      id,
+      user,
     });
   } catch (error) {
     console.error(error);
@@ -337,6 +370,7 @@ module.exports = {
   prueba,
   register,
   login,
+  profile,
   update,
   upload,
   forgotPassword,
