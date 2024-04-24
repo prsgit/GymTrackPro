@@ -29,7 +29,9 @@
   }
 
   /* Estilos para los controles de navegación del carrusel */
-  .control-arrow {
+  .control-arrow,
+  .control-dots,
+  .thumbs-wrapper {
     display: none; /* Ocultar las flechas de navegación */
   }
 

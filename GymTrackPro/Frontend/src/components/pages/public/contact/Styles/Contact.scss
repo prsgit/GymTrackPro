@@ -1,22 +1,10 @@
 @import "../../../../variables/Variables.scss";
 
-.login-content {
-  padding: 4em;
-
-  .alert-success {
-    color: $white;
-  }
-
-  .alert-error {
-    color: $white;
-  }
-}
-
-.login-form {
+.contact-form {
   font-family: Poppins;
-  padding-bottom: 50px;
   max-width: 400px;
   margin: 50px auto;
+  margin-top: 5em;
   padding: 20px;
   background-color: $pale-purple;
   border-radius: 8px;
@@ -26,18 +14,17 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 
-  .login {
+  .contact {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  .login label {
+  label {
     display: block;
     font-weight: bold;
   }
 
-  .login input[type="password"],
-  .login input[type="email"] {
+  input[type="email"] {
     background-color: $white;
     width: 100%;
     padding: 10px;
@@ -47,11 +34,21 @@
     box-sizing: border-box;
   }
 
+  textarea {
+    width: 100%; /* Ajusta el ancho del área de texto al 100% del contenedor */
+    height: 100px; /* Establece una altura inicial para el área de texto */
+    max-width: 300px;
+    resize: vertical; /* Permite que el área de texto se redimensione verticalmente */
+    padding: 10px;
+    border: 1px solid $violet;
+    border-radius: 5px;
+  }
+
   .btn {
-    font-family: Poppins;
     display: block;
-    width: auto;
+    width: 100px;
     max-width: 400px;
+    font-family: Poppins;
     padding: 10px;
     border: none;
     border-radius: 5px;

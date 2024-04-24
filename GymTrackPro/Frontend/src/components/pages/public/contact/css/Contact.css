@@ -1,19 +1,10 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-.login-content {
-  padding: 4em;
-}
-.login-content .alert-success {
-  color: #ffffff;
-}
-.login-content .alert-error {
-  color: #ffffff;
-}
-
-.login-form {
+.contact-form {
   font-family: Poppins;
-  padding-bottom: 50px;
   max-width: 400px;
   margin: 50px auto;
+  margin-top: 5em;
   padding: 20px;
   background-color: #f2d7ee;
   border-radius: 8px;
@@ -23,16 +14,15 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 }
-.login-form .login {
+.contact-form .contact {
   width: 100%;
   margin-bottom: 20px;
 }
-.login-form .login label {
+.contact-form label {
   display: block;
   font-weight: bold;
 }
-.login-form .login input[type=password],
-.login-form .login input[type=email] {
+.contact-form input[type=email] {
   background-color: #ffffff;
   width: 100%;
   padding: 10px;
@@ -41,11 +31,20 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
-.login-form .btn {
-  font-family: Poppins;
+.contact-form textarea {
+  width: 100%; /* Ajusta el ancho del área de texto al 100% del contenedor */
+  height: 100px; /* Establece una altura inicial para el área de texto */
+  max-width: 300px;
+  resize: vertical; /* Permite que el área de texto se redimensione verticalmente */
+  padding: 10px;
+  border: 1px solid #a5668b;
+  border-radius: 5px;
+}
+.contact-form .btn {
   display: block;
-  width: auto;
+  width: 100px;
   max-width: 400px;
+  font-family: Poppins;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -54,6 +53,6 @@
   font-size: 16px;
   cursor: pointer;
 }
-.login-form .btn:hover {
+.contact-form .btn:hover {
   background-color: #45a049;
 }

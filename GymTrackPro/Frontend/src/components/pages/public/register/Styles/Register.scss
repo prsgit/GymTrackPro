@@ -1,8 +1,17 @@
 @import "../../../../variables/Variables.scss";
 
+.main-content {
+  .alert-success {
+    color: $white;
+  }
+
+  .alert-error {
+    color: $white;
+  }
+}
+
 .register-form {
   font-family: Poppins;
-  padding-bottom: 50px;
   max-width: 400px;
   margin: 50px auto 50px auto;
   padding: 20px;
@@ -43,7 +52,9 @@
 
 .btn {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 400px;
+  font-family: Poppins;
   padding: 10px;
   border: none;
   border-radius: 5px;

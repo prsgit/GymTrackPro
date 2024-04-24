@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignorar archivos Sass de la carpeta Styles
-/Styles/**/*.scss
+# Ignorar archivos css
+/css/*.css
 

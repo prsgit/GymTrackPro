@@ -33,7 +33,9 @@
 .carousel .carousel-slider .slide:not(.selected) img {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
 }
-.carousel .control-arrow {
+.carousel .control-arrow,
+.carousel .control-dots,
+.carousel .thumbs-wrapper {
   display: none; /* Ocultar las flechas de navegación */
 }
 .carousel .thumbs-wrapper {

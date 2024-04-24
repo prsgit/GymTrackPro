@@ -9,6 +9,7 @@ const Nav = () => {
   return (
     <>
       <nav className="nav">
+        <ul className="logout-content"></ul>
         <ul>
           <li>
             <FontAwesomeIcon icon={faHouse} size="sm" className="icon" />
@@ -22,6 +23,8 @@ const Nav = () => {
             <FontAwesomeIcon icon={faUser} size="sm" className="icon" />
             <NavLink to="perfil">Perfil</NavLink>
           </li>
+        </ul>
+        <ul className="logout-content">
           <li className="logout">
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}

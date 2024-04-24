@@ -20,6 +20,18 @@
   padding: 0;
   text-align: center;
   display: flex;
+  font-size: 20px;
+}
+.nav ul.logout-content {
+  width: 130px;
+}
+.nav ul.logout-content:first-of-type {
+  margin-right: auto;
+  margin-left: 30px;
+}
+.nav ul.logout-content:last-of-type {
+  margin-left: auto;
+  margin-right: 30px;
 }
 .nav ul li {
   display: inline-block;

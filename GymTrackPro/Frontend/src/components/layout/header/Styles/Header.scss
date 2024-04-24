@@ -5,6 +5,7 @@ header {
   height: 100px;
   width: 100%;
   font-family: Poppins;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +17,6 @@ header {
     height: auto; /* Altura automática para adaptarse al contenido */
     padding: 10px; /* Espaciado interno */
     justify-content: flex-start; /* Alinear elementos a la izquierda */
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .icon {
-      display: none; /* Ocultar el ícono en tabletas y dispositivos pequeños */
-    }
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1440px) {

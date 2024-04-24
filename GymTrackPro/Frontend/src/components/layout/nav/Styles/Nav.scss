@@ -16,6 +16,21 @@
     padding: 0;
     text-align: center;
     display: flex;
+    font-size: 20px;
+
+    &.logout-content {
+      width: 130px;
+
+      &:first-of-type {
+        margin-right: auto;
+        margin-left: 30px;
+      }
+
+      &:last-of-type {
+        margin-left: auto;
+        margin-right: 30px;
+      }
+    }
 
     li {
       display: inline-block;
