@@ -1,5 +1,21 @@
 @import "../../../../variables/Variables.scss";
 
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
 .initial {
   position: relative; /* Establece la posición relativa para poder posicionar los elementos hijos */
   background-size: 20%; /* Ajusta la imagen para cubrir todo el contenedor */
@@ -9,6 +25,21 @@
   img {
     width: 100%;
     height: auto;
+  }
+
+  .text {
+    position: absolute; /* Establece la posición absoluta para que se coloque encima de la imagen */
+    color: $white;
+    font-weight: bold;
+    font-size: 72px;
+    font-family: Poppins;
+    top: 5em;
+    left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Centra el elemento horizontal y verticalmente */
+    margin-bottom: 20px; /* Espacio entre el texto y el botón */
   }
 
   .btn-initial {
@@ -24,27 +55,29 @@
     position: absolute;
     left: 50%;
     top: 11em;
-    width: 190px;
+    width: 170px;
     height: 69px;
+    animation: bounce 2s ease infinite;
   }
 
   button:hover {
     background-color: $violet;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
-}
 
-.text {
-  position: absolute; /* Establece la posición absoluta para que se coloque encima de la imagen */
-  color: $white;
-  font-weight: bold;
-  font-size: 69px;
-  font-family: Poppins;
-  top: 5em;
-  left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Centra el elemento horizontal y verticalmente */
-  margin-bottom: 20px; /* Espacio entre el texto y el botón */
+  /*pantallas de hasta 767px de ancho */
+  @media screen and (max-width: 767px) {
+  }
+
+  /*pantallas de 768px a 1024px de ancho */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  }
+
+  /*pantallas de 1025px a 1440px de ancho */
+  @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  }
+
+  /*pantallas de 1441px de ancho en adelante */
+  @media screen and (min-width: 1441px) {
+  }
 }

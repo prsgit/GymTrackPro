@@ -1,12 +1,14 @@
 @charset "UTF-8";
 /* Estilos para el carrusel */
-.carousel {
+.carousel-content {
+  margin-top: 50px;
+}
+.carousel-content .carousel {
   width: 100%;
   max-width: 800px; /* Ancho máximo del carrusel */
   margin: 20px auto 60px !important; /* Centrar el carrusel horizontalmente */
   /* Estilos para las imágenes dentro del carrusel */
   /* Estilos para los controles de navegación del carrusel */
-  /* Estilos para el indicador de página del carrusel */
   /* Estilos para la barra de navegación del carrusel */
   /* Media queries*/
   /* Estilos para dispositivos móviles */
@@ -14,54 +16,51 @@
   /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
   /* Estilos para pantallas grandes (escritorios) */
 }
-.carousel .slide {
+.carousel-content .carousel .slide {
   display: flex; /* Usar flexbox */
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
 }
-.carousel .slide img {
-  max-width: 340px;
-  max-height: 340px;
+.carousel-content .carousel .slide img {
+  max-width: 450px;
+  max-height: 450px;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
   transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
 }
-.carousel .carousel-slider .slide img {
+.carousel-content .carousel .carousel-slider .slide img {
   box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
 }
-.carousel .carousel-slider .slide:not(.selected) img {
+.carousel-content .carousel .carousel-slider .slide:not(.selected) img {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
 }
-.carousel .control-arrow,
-.carousel .control-dots,
-.carousel .thumbs-wrapper {
+.carousel-content .carousel .control-arrow,
+.carousel-content .carousel .control-dots,
+.carousel-content .carousel .thumbs-wrapper {
   display: none; /* Ocultar las flechas de navegación */
 }
-.carousel .thumbs-wrapper {
-  display: none; /* Ocultar los indicadores de página */
-}
-.carousel .carousel-status {
+.carousel-content .carousel .carousel-status {
   display: none; /* Ocultar el texto del número de diapositiva */
   position: relative; /* Establecer posición relativa */
 }
 @media screen and (max-width: 767px) {
-  .carousel .carousel {
+  .carousel-content .carousel .carousel {
     max-width: 100%; /* Ancho máximo adaptado para dispositivos móviles */
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .carousel .carousel {
+  .carousel-content .carousel .carousel {
     max-width: 800px; /* Ancho máximo adaptado para tabletas */
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .carousel .carousel {
+  .carousel-content .carousel .carousel {
     max-width: 1000px; /* Ancho máximo adaptado para pantallas medianas */
   }
 }
 @media screen and (min-width: 1441px) {
-  .carousel .carousel {
+  .carousel-content .carousel .carousel {
     max-width: 1200px; /* Ancho máximo adaptado para pantallas grandes */
   }
 }

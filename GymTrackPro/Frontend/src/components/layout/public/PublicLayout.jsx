@@ -3,16 +3,26 @@ import Header from "./Header";
 import Nav from "./Nav";
 
 const PublicLayout = () => {
+  let token = localStorage.getItem("token");
+  let user = localStorage.getItem("user");
+
   return (
     <>
-      {/*Layout*/}
-      <Header />
-      <Nav />
+      {token !== null &&
+      token !== undefined &&
+      user !== null &&
+      user !== undefined ? (
+        (location.href = "/private")
+      ) : (
+        <>
+          <Header />
+          <Nav />
 
-      {/*Contenido principal */}
-      <section className="layout-content">
-        <Outlet />
-      </section>
+          <section className="layout-content">
+            <Outlet />
+          </section>
+        </>
+      )}
     </>
   );
 };

@@ -11,21 +11,20 @@ header {
   justify-content: center;
   position: relative; /* Establece posición relativa para que podamos posicionar la imagen */
 }
+header .icon {
+  margin-right: 5px;
+}
 @media screen and (max-width: 767px) {
   header {
     height: auto; /* Altura automática para adaptarse al contenido */
-    padding: 10px; /* Espaciado interno */
-    justify-content: flex-start; /* Alinear elementos a la izquierda */
+    justify-content: center; /* Alinear elementos al centro */
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   header header {
-    height: 80px; /* Reducir la altura del encabezado */
+    height: auto; /* Reducir la altura del encabezado */
     padding: 0 20px; /* Añadir un poco de espacio interno */
-    justify-content: space-between; /* Alinear elementos a los extremos */
-  }
-  header .icon {
-    margin-right: 0; /* Eliminar el margen derecho del icono */
+    justify-content: center;
   }
   header .logo {
     margin-left: 20px; /* Añadir margen izquierdo al logo */
@@ -36,10 +35,7 @@ header {
     height: 120px; /* Aumentar la altura del encabezado */
     padding: 0 40px; /* Añadir más espacio interno */
   }
-  header .icon {
-    margin-right: 20px; /* Restaurar el margen derecho del icono */
-  }
   header .logo {
-    margin-left: 40px; /* Añadir más margen izquierdo al logo */
+    margin-left: 20px; /* Añadir más margen izquierdo al logo */
   }
 }

@@ -19,7 +19,7 @@
     font-size: 20px;
 
     &.logout-content {
-      width: 130px;
+      width: 153px;
 
       &:first-of-type {
         margin-right: auto;
@@ -69,16 +69,29 @@
       flex-direction: column; /* Alinear elementos verticalmente */
       align-items: flex-start; /* Alinear elementos a la izquierda */
       margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
+      width: 100%;
     }
 
     li {
       display: block;
       margin-right: 0;
       margin-bottom: 10px;
+      text-align: left; /* Alinear texto al centro */
+      width: 100%;
+
+      li:first-child {
+        width: 100%;
+        margin: 0 !important; // Asegurar que el primer elemento no tenga margen
+      }
+    }
+
+    .logout-content {
+      width: 100%; // Asegurar que ocupe todo el ancho disponible
+      margin: 0 !important; // Eliminar cualquier margen que pueda estar afectando su posición
     }
 
     li .icon {
-      margin-right: 3px; /* Espacio entre el icono y el texto */
+      margin-right: 0; /* Eliminar el margen entre el icono y el texto */
     }
   }
 

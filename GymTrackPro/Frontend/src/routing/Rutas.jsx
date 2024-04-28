@@ -29,7 +29,6 @@ const Rutas = () => {
 
             <Route path="/private" element={<PrivateLayout />}>
               <Route index element={<Inicio />} />
-              <Route path="inicio" element={<Inicio />} />
               <Route path="entrenamientos" element={<Entrenamientos />} />
               <Route path="perfil" element={<Perfil />} />
               <Route path="cerrar-sesion" element={<Logout />} />

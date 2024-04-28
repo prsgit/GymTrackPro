@@ -1,78 +1,78 @@
 /* Estilos para el carrusel */
-.carousel {
-  width: 100%;
-  max-width: 800px; /* Ancho máximo del carrusel */
-  margin: 20px auto 60px !important; /* Centrar el carrusel horizontalmente */
 
-  .slide {
-    display: flex; /* Usar flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-  }
+.carousel-content {
+  margin-top: 50px;
 
-  /* Estilos para las imágenes dentro del carrusel */
-  .slide img {
-    max-width: 340px;
-    max-height: 340px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
-    transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
-  }
+  .carousel {
+    width: 100%;
+    max-width: 800px; /* Ancho máximo del carrusel */
+    margin: 20px auto 60px !important; /* Centrar el carrusel horizontalmente */
 
-  .carousel-slider .slide img {
-    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
-  }
-
-  .carousel-slider .slide:not(.selected) img {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
-  }
-
-  /* Estilos para los controles de navegación del carrusel */
-  .control-arrow,
-  .control-dots,
-  .thumbs-wrapper {
-    display: none; /* Ocultar las flechas de navegación */
-  }
-
-  /* Estilos para el indicador de página del carrusel */
-  .thumbs-wrapper {
-    display: none; /* Ocultar los indicadores de página */
-  }
-
-  /* Estilos para la barra de navegación del carrusel */
-  .carousel-status {
-    display: none; /* Ocultar el texto del número de diapositiva */
-    position: relative; /* Establecer posición relativa */
-  }
-
-  /* Media queries*/
-
-  /* Estilos para dispositivos móviles */
-  @media screen and (max-width: 767px) {
-    .carousel {
-      max-width: 100%; /* Ancho máximo adaptado para dispositivos móviles */
+    .slide {
+      display: flex; /* Usar flexbox */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
     }
-  }
 
-  /* Estilos para tabletas y dispositivos pequeños */
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .carousel {
-      max-width: 800px; /* Ancho máximo adaptado para tabletas */
+    /* Estilos para las imágenes dentro del carrusel */
+    .slide img {
+      max-width: 450px;
+      max-height: 450px;
+      border: 1px solid black;
+      border-radius: 10px;
+      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+      transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
     }
-  }
 
-  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    .carousel {
-      max-width: 1000px; /* Ancho máximo adaptado para pantallas medianas */
+    .carousel-slider .slide img {
+      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
     }
-  }
 
-  /* Estilos para pantallas grandes (escritorios) */
-  @media screen and (min-width: 1441px) {
-    .carousel {
-      max-width: 1200px; /* Ancho máximo adaptado para pantallas grandes */
+    .carousel-slider .slide:not(.selected) img {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
+    }
+
+    /* Estilos para los controles de navegación del carrusel */
+    .control-arrow,
+    .control-dots,
+    .thumbs-wrapper {
+      display: none; /* Ocultar las flechas de navegación */
+    }
+
+    /* Estilos para la barra de navegación del carrusel */
+    .carousel-status {
+      display: none; /* Ocultar el texto del número de diapositiva */
+      position: relative; /* Establecer posición relativa */
+    }
+
+    /* Media queries*/
+
+    /* Estilos para dispositivos móviles */
+    @media screen and (max-width: 767px) {
+      .carousel {
+        max-width: 100%; /* Ancho máximo adaptado para dispositivos móviles */
+      }
+    }
+
+    /* Estilos para tabletas y dispositivos pequeños */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .carousel {
+        max-width: 800px; /* Ancho máximo adaptado para tabletas */
+      }
+    }
+
+    /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
+    @media screen and (min-width: 1025px) and (max-width: 1440px) {
+      .carousel {
+        max-width: 1000px; /* Ancho máximo adaptado para pantallas medianas */
+      }
+    }
+
+    /* Estilos para pantallas grandes (escritorios) */
+    @media screen and (min-width: 1441px) {
+      .carousel {
+        max-width: 1200px; /* Ancho máximo adaptado para pantallas grandes */
+      }
     }
   }
 }

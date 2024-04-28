@@ -13,7 +13,7 @@ const Nav = () => {
         <ul>
           <li>
             <FontAwesomeIcon icon={faHouse} size="sm" className="icon" />
-            <NavLink to="inicio">Inicio</NavLink>
+            <NavLink to="/private">Inicio</NavLink>
           </li>
           <li>
             <FontAwesomeIcon icon={faDumbbell} size="sm" className="icon" />
