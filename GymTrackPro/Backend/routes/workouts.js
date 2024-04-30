@@ -26,7 +26,8 @@ const uploads = multer({ storage }); // uploads funciona como middleware(tipo ch
 
 //Definir rutas
 router.post("/save", workoutsController.saveWorkout);
-router.get("/workout/:id", workoutsController.exercisesByType);
+router.get("/workout/:id", workoutsController.oneWorkout);
+router.get("/workout", workoutsController.allWorkout);
 router.put("/update/:id", workoutsController.update);
 router.post("/upload/:id", uploads.single("file0"), workoutsController.upload); //se pueden pasar varios middlewares con []
 router.get("/image/:file", workoutsController.image);

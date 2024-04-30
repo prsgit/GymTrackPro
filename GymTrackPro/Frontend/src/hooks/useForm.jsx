@@ -12,9 +12,14 @@ const useForm = (initialObject = {}) => {
     });
   };
 
+  const resetForm = () => {
+    setForm(initialObject);
+  };
+
   return {
     form,
     changed,
+    resetForm,
   };
 };
 

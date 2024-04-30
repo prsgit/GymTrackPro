@@ -11,34 +11,34 @@ import Contact from "../components/pages/public/contact/Contact";
 import Entrenamientos from "../components/pages/private/typeworkouts/Entrenamientos";
 import Perfil from "../components/pages/private/profile/Perfil";
 import Logout from "../components/pages/private/logout/Logout";
-import AuthProvider from "../context/AuthProvider";
+// import AuthProvider from "../context/AuthProvider";
 
 const Rutas = () => {
   return (
     <>
       <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route index element={<Initialpage />} />
-            <Route path="initial" element={<Initialpage />} />
-            <Route path="/" element={<PublicLayout />}>
-              <Route path="login" element={<Login />} />
-              <Route path="registro" element={<Register />} />
-              <Route path="contacto" element={<Contact />} />
-            </Route>
+        {/* <AuthProvider> */}
+        <Routes>
+          <Route index element={<Initialpage />} />
+          <Route path="initial" element={<Initialpage />} />
+          <Route path="/" element={<PublicLayout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="registro" element={<Register />} />
+            <Route path="contacto" element={<Contact />} />
+          </Route>
 
-            <Route path="/private" element={<PrivateLayout />}>
-              <Route index element={<Inicio />} />
-              <Route path="entrenamientos" element={<Entrenamientos />} />
-              <Route path="perfil" element={<Perfil />} />
-              <Route path="cerrar-sesion" element={<Logout />} />
-            </Route>
+          <Route path="/private" element={<PrivateLayout />}>
+            <Route index element={<Inicio />} />
+            <Route path="entrenamientos" element={<Entrenamientos />} />
+            <Route path="perfil" element={<Perfil />} />
+            <Route path="cerrar-sesion" element={<Logout />} />
+          </Route>
 
-            <Route path="*" element={<Error404 />}></Route>
-          </Routes>
+          <Route path="*" element={<Error404 />}></Route>
+        </Routes>
 
-          <Footer />
-        </AuthProvider>
+        <Footer />
+        {/* </AuthProvider> */}
       </BrowserRouter>
     </>
   );

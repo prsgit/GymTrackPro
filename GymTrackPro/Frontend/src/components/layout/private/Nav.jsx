@@ -5,6 +5,7 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+// import imageProfile from "../../../assets/image/user.png";
 const Nav = () => {
   return (
     <>
@@ -22,6 +23,17 @@ const Nav = () => {
           <li>
             <FontAwesomeIcon icon={faUser} size="sm" className="icon" />
             <NavLink to="perfil">Perfil</NavLink>
+          </li>
+        </ul>
+        <ul className="profile-content">
+          <li className="name-profile">
+            <span className="name">nick</span>
+          </li>
+
+          <li className="image-profile">
+            <a href="" className="image">
+              <img src={""} alt="imagen" />
+            </a>
           </li>
         </ul>
         <ul className="logout-content">

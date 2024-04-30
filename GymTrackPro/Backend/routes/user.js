@@ -36,7 +36,7 @@ router.post(
   [check.auth, uploads.single("file0")],
   userController.upload
 ); //se pueden pasar varios middlewares con []
-router.post("/forgotpassword", check.auth, userController.forgotPassword);
+router.post("/forgotpassword/:id", check.auth, userController.forgotPassword);
 
 // Exportar router
 module.exports = router;

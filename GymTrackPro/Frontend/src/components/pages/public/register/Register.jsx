@@ -2,11 +2,14 @@ import useForm from "../../../../hooks/useForm";
 import "./css/Register.css";
 import { Global } from "../../../../helpers/Global";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { form, changed } = useForm({});
 
   const [saved, setSaved] = useState("not_sended");
+
+  const navigate = useNavigate();
 
   const saveUser = async (e) => {
     //Prevenir actulización de la pantalla.
@@ -28,6 +31,11 @@ const Register = () => {
 
     if (data.status == "success") {
       setSaved("saved");
+
+      // Después de 2 segundo, navega a la página de inicio de sesión
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } else {
       setSaved("error");
     }

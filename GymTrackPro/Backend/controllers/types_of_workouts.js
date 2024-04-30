@@ -89,6 +89,8 @@ const allTypesWorkout = async (req, res) => {
   }
 };
 
+//------------------------------------------------------------------------------
+
 const oneTypeWorkout = async (req, res) => {
   try {
     const typeId = req.params.id;

@@ -31,6 +31,12 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(data.user));
 
       setLoged("login");
+
+      //Redirección
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } else {
       setLoged("error");
     }

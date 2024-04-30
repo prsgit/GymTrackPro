@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.main-content .alert-success {
+  color: #ffffff;
+}
+.main-content .alert-error {
+  color: #ffffff;
+}
+
+.profile-form {
+  font-family: Poppins;
+  max-width: 400px;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  background-color: #f2d7ee;
+  border-radius: 8px;
+  box-shadow: 0 0 10p #f2d7ee;
+  display: flex; /* Utiliza flexbox para centrar los elementos */
+  flex-direction: column; /* Alinea los elementos en una columna */
+  justify-content: center; /* Centra verticalmente los elementos */
+  align-items: center; /* Centra horizontalmente los elementos */
+}
+
+.main-content {
+  margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
+}
+
+.profile {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile label {
+  display: block;
+  font-weight: bold;
+}
+
+.profile input[type=text],
+.profile input[type=email],
+.profile input[type=password] {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #a5668b;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: block;
+  width: auto;
+  max-width: 400px;
+  font-family: Poppins;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}

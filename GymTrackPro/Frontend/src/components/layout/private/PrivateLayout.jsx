@@ -33,7 +33,6 @@ const PrivateLayout = () => {
         ) : (
           <Navigate to="/login" />
         )}
-        {/* <Outlet /> */}
       </section>
     </>
   );

@@ -37,80 +37,24 @@ const saveWorkout = async (req, res) => {
 
 //----------------------------------------------------------------------------------
 
-// const oneWorkout = async (req, res) => {
-//   try {
-//     // Sacar un params por la url
-//     const oneWorkoutId = req.params.id;
-
-//     // Buscar type of workout y sacarlo de forma asíncrona
-//     const typeWorkout = await workouts.findById(oneWorkoutId);
-
-//     if (!typeWorkout) {
-//       return res.status(404).send({
-//         status: "error",
-//         message: "There is no workout",
-//       });
-//     }
-
-//     res.status(200).send({
-//       status: "success",
-//       typeWorkout,
-//     });
-//   } catch (error) {
-//     res.status(500).send({
-//       status: "error",
-//       message: "Internal server error",
-//     });
-//   }
-// };
-
-// const oneWorkout = async (req, res) => {
-//   try {
-//     // Obtener el ID del tipo de entrenamiento desde los parámetros de la URL
-//     const oneWorkoutId = req.params.id;
-//     console.log(oneWorkoutId);
-
-//     // Buscar el tipo de entrenamiento y los ejercicios asociados de forma asíncrona
-//     const typeWorkoutWithExercises = await workouts.find({
-//       typeofWorkouts: oneWorkoutId,
-//     });
-//     console.log(typeWorkoutWithExercises);
-
-//     if (!typeWorkoutWithExercises) {
-//       return res.status(404).send({
-//         status: "error",
-//         message: "No se encontró el tipo de entrenamiento",
-//       });
-//     }
-//     res.status(200).send({
-//       status: "success",
-//       typeWorkout: typeWorkoutWithExercises,
-//     });
-//   } catch (error) {
-//     res.status(500).send({
-//       status: "error",
-//       message: "Error interno del servidor",
-//     });
-//   }
-// };
-
-const exercisesByType = async (req, res) => {
+const allWorkout = async (req, res) => {
   try {
-    const typeId = req.params.typeId; // ID o identificador del tipo de entrenamiento
+    // Sacar un params por la url
+    // const oneWorkoutId = req.params;
 
-    // Buscar ejercicios por el tipo de entrenamiento
-    const exercises = await workouts.find({ typeofWorkout: typeId });
+    // Buscar type of workout y sacarlo de forma asíncrona
+    const typeWorkout = await workouts.find();
 
-    if (!exercises || exercises.length === 0) {
+    if (!typeWorkout) {
       return res.status(404).send({
         status: "error",
-        message: "No exercises found for the specified type of training",
+        message: "There is no workout",
       });
     }
 
     res.status(200).send({
       status: "success",
-      exercises,
+      typeWorkout,
     });
   } catch (error) {
     res.status(500).send({
@@ -120,7 +64,39 @@ const exercisesByType = async (req, res) => {
   }
 };
 
-// //-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+const oneWorkout = async (req, res) => {
+  try {
+    // Obtener el ID del tipo de entrenamiento desde los parámetros de la URL
+    const oneWorkoutId = req.params.id;
+    console.log(oneWorkoutId);
+
+    // Buscar el tipo de entrenamiento y los ejercicios asociados de forma asíncrona
+    const typeWorkoutWithExercises = await workouts.find({
+      typeofWorkouts: oneWorkoutId,
+    });
+    console.log(typeWorkoutWithExercises);
+
+    if (!typeWorkoutWithExercises) {
+      return res.status(404).send({
+        status: "error",
+        message: "No se encontró el tipo de entrenamiento",
+      });
+    }
+    res.status(200).send({
+      status: "success",
+      typeWorkout: typeWorkoutWithExercises,
+    });
+  } catch (error) {
+    res.status(500).send({
+      status: "error",
+      message: "Error interno del servidor",
+    });
+  }
+};
+
+//-------------------------------------------------------------------------------------
 
 const update = async (req, res) => {
   try {
@@ -279,8 +255,8 @@ const remove = async (req, res) => {
 //  exportar acciones
 module.exports = {
   saveWorkout,
-  // oneWorkout,
-  exercisesByType,
+  oneWorkout,
+  allWorkout,
   update,
   upload,
   image,
