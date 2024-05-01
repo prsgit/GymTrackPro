@@ -11,6 +11,7 @@ import Contact from "../components/pages/public/contact/Contact";
 import Entrenamientos from "../components/pages/private/typeworkouts/Entrenamientos";
 import Perfil from "../components/pages/private/profile/Perfil";
 import Logout from "../components/pages/private/logout/Logout";
+import Forgot from "../components/pages/public/forgot/Forgot";
 // import AuthProvider from "../context/AuthProvider";
 
 const Rutas = () => {
@@ -25,6 +26,7 @@ const Rutas = () => {
             <Route path="login" element={<Login />} />
             <Route path="registro" element={<Register />} />
             <Route path="contacto" element={<Contact />} />
+            <Route path="forgot" element={<Forgot />} />
           </Route>
 
           <Route path="/private" element={<PrivateLayout />}>

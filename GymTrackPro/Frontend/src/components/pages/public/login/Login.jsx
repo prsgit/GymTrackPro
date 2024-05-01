@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Global } from "../../../../helpers/Global";
 import useForm from "../../../../hooks/useForm";
 import "./css/Login.css";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const { form, changed } = useForm({});
@@ -65,6 +66,11 @@ const Login = () => {
               name="password"
               onChange={changed}
             />
+          </div>
+          <div className="forgot-password">
+            <NavLink className={"forgot-link"} to="/forgot">
+              ¿Has olvidado tu contraseña?
+            </NavLink>
           </div>
           <button type="submit" className="btn">
             Iniciar sesión
