@@ -8,14 +8,27 @@ const Contact = () => {
 
   const [email, setEmail] = useState("not_sended");
 
+  const validateEmail = (email) => {
+    // Expresión regular para validar el formato de correo electrónico
+    const emailRegex =
+      /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+(?:com|net|org|es)$/;
+    return emailRegex.test(email);
+  };
+
   const sendEmail = async (e) => {
-    //Prevenir actulización de la pantalla.
     e.preventDefault();
 
-    //Recoger datos del form.
+    // Validar el correo electrónico antes de enviarlo
+    if (!validateEmail(form.email)) {
+      setEmail("error");
+      setTimeout(() => {
+        setEmail("not_sended");
+      }, 2000);
+      return; // Detener la ejecución si el correo electrónico no es válido
+    }
+
     let newEmail = form;
 
-    //Guardar en el back.
     const request = await fetch(Global.url + "email/save-email", {
       method: "POST",
       body: JSON.stringify(newEmail),
@@ -28,16 +41,15 @@ const Contact = () => {
 
     if (data.status == "success") {
       setEmail("email");
-
-      // Resetear el estado de 'email' después de 2 segundos
       setTimeout(() => {
         setEmail("not_sended");
       }, 2000);
-
-      // Limpiar campos del formulario después del envío exitoso
       resetForm();
     } else {
       setEmail("error");
+      setTimeout(() => {
+        setEmail("not_sended");
+      }, 2000);
     }
   };
 
@@ -45,10 +57,10 @@ const Contact = () => {
     <>
       <form className="contact-form" onSubmit={sendEmail}>
         <strong className="alert-success">
-          {email == "email" ? "Mensaje enviado correctamente !" : ""}
+          {email == "email" ? "¡Mensaje enviado correctamente !" : ""}
         </strong>
         <strong className="alert-error">
-          {email == "error" ? "Error al enviar el mensaje !" : ""}
+          {email == "error" ? "¡Error al enviar el mensaje !" : ""}
         </strong>
         <div className="contact">
           <label htmlFor="email">Email</label>

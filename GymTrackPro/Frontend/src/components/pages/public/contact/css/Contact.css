@@ -18,6 +18,14 @@
   width: 100%;
   margin-bottom: 20px;
 }
+.contact-form .alert-success {
+  color: #4caf50;
+  font-weight: bold;
+}
+.contact-form .alert-error {
+  color: #ff0000;
+  font-weight: bold;
+}
 .contact-form label {
   display: block;
   font-weight: bold;

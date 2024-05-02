@@ -26,6 +26,11 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 
+  .alert-error {
+    color: $error;
+    font-weight: bold;
+  }
+
   .login {
     width: 100%;
     margin-bottom: 20px;
@@ -50,10 +55,10 @@
   .forgot-link {
     text-decoration: none;
     color: $finn;
-  }
 
-  .forgot-link:hover {
-    color: $penn-blue;
+    &:hover {
+      color: $penn-blue;
+    }
   }
 
   .btn {

@@ -19,6 +19,16 @@
     margin-bottom: 20px;
   }
 
+  .alert-success {
+    color: $success;
+    font-weight: bold;
+  }
+
+  .alert-error {
+    color: $error;
+    font-weight: bold;
+  }
+
   label {
     display: block;
     font-weight: bold;

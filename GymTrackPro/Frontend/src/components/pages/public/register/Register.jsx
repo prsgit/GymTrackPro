@@ -11,14 +11,29 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+  const [registrando] = useState();
+
+  const validateEmail = (email) => {
+    // Expresión regular para validar el formato de correo electrónico
+    const emailRegex =
+      /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+(?:com|net|org|es)$/;
+    return emailRegex.test(email);
+  };
+
   const saveUser = async (e) => {
-    //Prevenir actulización de la pantalla.
     e.preventDefault();
 
-    //Recoger datos del form.
+    // Validar el correo electrónico antes de enviarlo
+    if (!validateEmail(form.email)) {
+      setSaved("error");
+      setTimeout(() => {
+        setSaved("not_sended");
+      }, 2000);
+      return;
+    }
+
     let newUser = form;
 
-    //Guardar en el back.
     const request = await fetch(Global.url + "user/register", {
       method: "POST",
       body: JSON.stringify(newUser),
@@ -31,49 +46,78 @@ const Register = () => {
 
     if (data.status == "success") {
       setSaved("saved");
-
-      // Después de 2 segundo, navega a la página de inicio de sesión
       setTimeout(() => {
         navigate("/login");
       }, 2000);
     } else {
       setSaved("error");
+      setTimeout(() => {
+        setSaved("not_sended");
+      }, 2000);
     }
   };
 
   return (
     <>
       <div className="main-content">
-        <strong className="alert-success">
-          {saved == "saved" ? "Usuario registrado correctamente !" : ""}
-        </strong>
-        <strong className="alert-error">
-          {saved == "error" ? "Error al registrar el ususario !" : ""}
-        </strong>
-
         <form className="register-form" onSubmit={saveUser}>
+          <strong className="alert-success">
+            {saved == "saved" ? "¡Usuario registrado correctamente!" : ""}
+          </strong>
+          <strong className="alert-error">
+            {saved == "error" ? "¡Error al registrar el usuario !" : ""}
+          </strong>
           <div className="register">
             <label htmlFor="name">Nombre</label>
-            <input type="text" name="name" onChange={changed} />
+            <input
+              type="text"
+              name="name"
+              onChange={changed}
+              disabled={registrando}
+            />
           </div>
           <div className="register">
             <label htmlFor="surname">Apellidos</label>
-            <input type="text" name="surname" onChange={changed} />
+            <input
+              type="text"
+              name="surname"
+              onChange={changed}
+              disabled={registrando}
+            />
           </div>
           <div className="register">
             <label htmlFor="nick">Nick</label>
-            <input type="text" name="nick" onChange={changed} />
+            <input
+              type="text"
+              name="nick"
+              onChange={changed}
+              disabled={registrando}
+            />
           </div>
           <div className="register">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" onChange={changed} />
+            <input
+              type="email"
+              name="email"
+              onChange={changed}
+              disabled={registrando}
+            />
           </div>
           <div className="register">
-            <label htmlFor="passowrd">Contraseña</label>
-            <input type="password" name="password" onChange={changed} />
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              onChange={changed}
+              disabled={registrando}
+            />
           </div>
 
-          <button type="submit" className="btn">
+          <button
+            type="submit"
+            className="btn"
+            disabled={registrando || saved.trim() === ""}
+          >
             Registrate
           </button>
         </form>

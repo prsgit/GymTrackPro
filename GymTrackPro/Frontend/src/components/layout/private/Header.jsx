@@ -1,6 +1,7 @@
 import "../header/css/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
+
 const Header = () => {
   return (
     <>

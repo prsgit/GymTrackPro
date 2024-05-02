@@ -9,8 +9,11 @@ const Login = () => {
 
   const [loged, setLoged] = useState("not_sended");
 
+  const [iniciando, setIniciando] = useState(false);
+
   const loginUser = async (e) => {
     e.preventDefault();
+    setIniciando(true);
 
     //Datos del form.
     let userToLogin = form;
@@ -37,26 +40,35 @@ const Login = () => {
 
       setTimeout(() => {
         window.location.reload();
-      }, 1000);
+      }, 2000);
     } else {
       setLoged("error");
+      setTimeout(() => {
+        setLoged("not_sended");
+      }, 2000);
+
+      setTimeout(() => {
+        setIniciando(false);
+      }, 1000);
     }
   };
 
   return (
     <>
       <div className="login-content">
-        <strong className="alert-success">
-          {loged == "login" ? "Usuario identificado correctamente !" : ""}
-        </strong>
-        <strong className="alert-error">
-          {loged == "error" ? "Error al identificar el usuario !" : ""}
-        </strong>
-
         <form className="login-form" onSubmit={loginUser}>
+          <strong className="alert-error">
+            {loged == "error" ? "Error al identificar el usuario !" : ""}
+          </strong>
           <div className="login">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" onChange={changed} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={changed}
+              disabled={iniciando}
+            />
           </div>
           <div className="login">
             <label htmlFor="password">Contraseña</label>
@@ -65,14 +77,20 @@ const Login = () => {
               id="password"
               name="password"
               onChange={changed}
+              disabled={iniciando} //evita acceder al input mientras se esta ejecutando.
             />
           </div>
+
           <div className="forgot-password">
             <NavLink className={"forgot-link"} to="/forgot">
               ¿Has olvidado tu contraseña?
             </NavLink>
           </div>
-          <button type="submit" className="btn">
+          <button
+            type="submit"
+            className="btn"
+            disabled={iniciando || loged.trim() === ""} //evita múltiples solicitudes mientras esta iniciando.
+          >
             Iniciar sesión
           </button>
         </form>

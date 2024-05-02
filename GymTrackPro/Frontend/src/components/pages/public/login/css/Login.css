@@ -23,6 +23,10 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 }
+.login-form .alert-error {
+  color: #ff0000;
+  font-weight: bold;
+}
 .login-form .login {
   width: 100%;
   margin-bottom: 20px;
