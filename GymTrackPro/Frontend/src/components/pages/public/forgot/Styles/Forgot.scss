@@ -26,6 +26,14 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 
+  .alert-success {
+    color: $success;
+  }
+
+  .alert-error {
+    color: $error;
+  }
+
   .forgot {
     width: 100%;
     margin-bottom: 20px;

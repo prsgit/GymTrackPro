@@ -23,6 +23,12 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 }
+.forgot-form .alert-success {
+  color: #4caf50;
+}
+.forgot-form .alert-error {
+  color: #ff0000;
+}
 .forgot-form .forgot {
   width: 100%;
   margin-bottom: 20px;

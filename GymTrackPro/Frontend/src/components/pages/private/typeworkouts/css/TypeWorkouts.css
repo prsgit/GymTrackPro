@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.workout-content {
+  display: flex;
+  align-items: center;
+}
+.workout-content div {
+  border: 2px solid white;
+  margin: 20px;
+}
+.workout-content div p.type-workout {
+  color: #ffffff;
+  font-size: 22px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+.workout-content div p.workout-description {
+  color: #ffffff;
+  font-size: 18px;
+  /* font-weight: bold; */
+  font-family: monospace;
+}
+.workout-content div .image-workout {
+  cursor: pointer;
+  width: 15em;
+  height: 12em;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+  transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+}
+.workout-content div .image-workout:hover {
+  transform: scale(1.1);
+}
+.workout-content .workout div p.name {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Poppins";
+}
+.workout-content .workout div p.series {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Poppins";
+}
+.workout-content .workout div p.description {
+  color: #ffffff;
+  font-size: 18px;
+  /* font-weight: bold; */
+  font-family: monospace;
+}

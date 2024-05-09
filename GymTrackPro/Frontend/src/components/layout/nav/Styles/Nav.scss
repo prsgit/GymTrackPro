@@ -32,9 +32,10 @@
       }
     }
 
-    li {
+    .li-icon {
       display: inline-block;
       margin-right: 40px;
+      // no llega aqui
 
       &:last-child {
         margin-right: 0; /* Elimina el margen derecho del último elemento */
@@ -44,6 +45,7 @@
         text-decoration: none;
         color: $white;
         transition: color 0.3s ease; /* Transición suave del color */
+        border: 2px solid red;
       }
 
       &:hover {
@@ -60,59 +62,64 @@
   // Media queries
 
   /* Estilos para dispositivos móviles */
-  @media screen and (max-width: 767px) {
-    height: auto; /* Altura automática para acomodar el contenido */
-    padding: 10px; /* Espaciado interno */
-    justify-content: flex-start; /* Alinear elementos a la izquierda */
+  //   @media screen and (max-width: 767px) {
+  //     height: auto; /* Altura automática para acomodar el contenido */
+  //     padding: 10px; /* Espaciado interno */
+  //     justify-content: flex-start; /* Alinear elementos a la izquierda */
 
-    ul {
-      flex-direction: column; /* Alinear elementos verticalmente */
-      align-items: flex-start; /* Alinear elementos a la izquierda */
-      margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
-      width: 100%;
-    }
+  //     ul {
+  //       flex-direction: column; /* Alinear elementos verticalmente */
+  //       align-items: flex-start; /* Alinear elementos a la izquierda */
+  //       margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
+  //       width: 100%;
+  //     }
 
-    li {
-      display: block;
-      margin-right: 0;
-      margin-bottom: 10px;
-      text-align: left; /* Alinear texto al centro */
-      width: 100%;
+  //     li {
+  //       display: block;
+  //       margin-right: 0;
+  //       margin-bottom: 10px;
+  //       text-align: left; /* Alinear texto al centro */
+  //       width: 100%;
 
-      li:first-child {
-        width: 100%;
-        margin: 0 !important; // Asegurar que el primer elemento no tenga margen
-      }
-    }
+  //       li:first-child {
+  //         width: 100%;
+  //         margin: 0 !important; // Asegurar que el primer elemento no tenga margen
+  //       }
 
-    .logout-content {
-      width: 100%; // Asegurar que ocupe todo el ancho disponible
-      margin: 0 !important; // Eliminar cualquier margen que pueda estar afectando su posición
-    }
+  //       image {
+  //         width: 4em;
+  //         height: 4em;
+  //       }
+  //     }
 
-    li .icon {
-      margin-right: 0; /* Eliminar el margen entre el icono y el texto */
-    }
-  }
+  //     .logout-content {
+  //       width: 100%; // Asegurar que ocupe todo el ancho disponible
+  //       margin: 0 !important; // Eliminar cualquier margen que pueda estar afectando su posición
+  //     }
 
-  /* Estilos para tabletas y dispositivos pequeños */
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    ul {
-      justify-content: space-evenly; /* Espaciado uniforme entre elementos */
-    }
-  }
+  //     li .icon {
+  //       margin-right: 0; /* Eliminar el margen entre el icono y el texto */
+  //     }
+  //   }
 
-  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    ul {
-      justify-content: space-between; /* Espaciado automático entre elementos */
-    }
-  }
+  //   /* Estilos para tabletas y dispositivos pequeños */
+  //   @media screen and (min-width: 768px) and (max-width: 1024px) {
+  //     ul {
+  //       justify-content: space-evenly; /* Espaciado uniforme entre elementos */
+  //     }
+  //   }
 
-  /* Estilos para pantallas grandes (escritorios) */
-  @media screen and (min-width: 1441px) {
-    ul {
-      justify-content: center; /* Alinear elementos al centro */
-    }
-  }
+  //   /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
+  //   @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  //     ul {
+  //       justify-content: space-between; /* Espaciado automático entre elementos */
+  //     }
+  //   }
+
+  //   /* Estilos para pantallas grandes (escritorios) */
+  //   @media screen and (min-width: 1441px) {
+  //     ul {
+  //       justify-content: center; /* Alinear elementos al centro */
+  //     }
+  //   }
 }

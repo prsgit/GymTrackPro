@@ -1,0 +1,62 @@
+@import "../../../../variables/Variables.scss";
+
+.workout-content {
+  display: flex;
+  align-items: center;
+  div {
+    border: 2px solid white;
+    margin: 20px;
+
+    p.type-workout {
+      color: $white;
+      font-size: 22px;
+      font-family: Poppins;
+      font-weight: bold;
+    }
+
+    p.workout-description {
+      color: $white;
+      font-size: 18px;
+      /* font-weight: bold; */
+      font-family: monospace;
+    }
+
+    .image-workout {
+      cursor: pointer;
+      width: 15em;
+      height: 12em;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid black;
+      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+      transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .workout {
+    div {
+      p.name {
+        color: $white;
+        font-size: 22px;
+        font-weight: bold;
+        font-family: "Poppins";
+      }
+
+      p.series {
+        color: $white;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Poppins";
+      }
+
+      p.description {
+        color: $white;
+        font-size: 18px;
+        /* font-weight: bold; */
+        font-family: monospace;
+      }
+    }
+  }
+}

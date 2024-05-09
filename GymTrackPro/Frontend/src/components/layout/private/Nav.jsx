@@ -5,8 +5,12 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+// import { Global } from "../../../helpers/Global";
 // import imageProfile from "../../../assets/image/user.png";
 const Nav = () => {
+  let user = localStorage.getItem("user");
+  let userString = JSON.parse(user);
+
   return (
     <>
       <nav className="nav">
@@ -24,17 +28,17 @@ const Nav = () => {
             <FontAwesomeIcon icon={faUser} size="sm" className="icon" />
             <NavLink to="perfil">Perfil</NavLink>
           </li>
-        </ul>
-        <ul className="profile-content">
-          <li className="name-profile">
-            <span className="name">nick</span>
-          </li>
+          <ul className="profile-content">
+            <li className="name-profile">
+              <span className="name">{userString.nick}</span>
+            </li>
 
-          <li className="image-profile">
-            <a href="" className="image">
-              <img src={""} alt="imagen" />
-            </a>
-          </li>
+            <li className="image-profile">
+              <img src="" alt="foto perfil" />
+              {/* {userString.image != "default.png" && <img src={Global.url + "user/avatar/" + userString.image} className="image"alt="Foto de perfil"/>}
+              {userString.image == "default.png" && <img src={imageProfile} className="image"alt="Foto de perfil"/>} */}
+            </li>
+          </ul>
         </ul>
         <ul className="logout-content">
           <li className="logout">

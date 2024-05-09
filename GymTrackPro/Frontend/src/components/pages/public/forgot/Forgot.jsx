@@ -1,21 +1,38 @@
 import { useState } from "react";
 import "./css/Forgot.css";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 
 const Forgot = () => {
   const [email, setEmail] = useState("");
+
   const [enviando, setEnviando] = useState(false);
+
+  const validateEmail = (email) => {
+    // Expresión regular para validar el formato de correo electrónico
+    const emailRegex =
+      /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+(?:com|net|org|es)$/;
+    return emailRegex.test(email);
+  };
 
   const forgotUser = (e) => {
     e.preventDefault();
     setEnviando(true);
 
-    // Después de enviar el formulario, limpiamos el estado del correo electrónico
-    setTimeout(() => {
-      setEnviando(false);
-      setEmail("");
-      Navigate("/login");
-    }, 2000);
+    if (validateEmail(email)) {
+      setEmail("email");
+      setTimeout(() => {
+        setEnviando(false);
+        setEmail("");
+      }, 2000);
+      return; // Detener la ejecución si el correo electrónico no es válido
+    } else {
+      setEmail("error");
+      setTimeout(() => {
+        setEnviando(false);
+        setEmail("");
+      }, 2000);
+      return; // Detener la ejecución si el correo electrónico no es válido
+    }
   };
 
   const handleEmailChange = (e) => {
@@ -26,6 +43,12 @@ const Forgot = () => {
     <>
       <div className="forgot-content">
         <form className="forgot-form" onSubmit={forgotUser}>
+          <strong className="alert-success">
+            {email == "email" ? "¡Mensaje enviado correctamente !" : ""}
+          </strong>
+          <strong className="alert-error">
+            {email == "error" ? "¡Introduzca un email válido !" : ""}
+          </strong>
           <div className="forgot">
             <span className="text">¿Has olvidado tu contraseña?</span>
             <label htmlFor="email"></label>
@@ -48,7 +71,7 @@ const Forgot = () => {
             className="btn"
             disabled={enviando || email.trim() === ""}
           >
-            {enviando ? "Enviando..." : "Enviar"}
+            Enviar
           </button>
         </form>
       </div>

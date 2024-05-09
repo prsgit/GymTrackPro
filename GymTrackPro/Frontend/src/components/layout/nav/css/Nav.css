@@ -10,9 +10,6 @@
   align-items: center;
   justify-content: center;
   /* Estilos para dispositivos móviles */
-  /* Estilos para tabletas y dispositivos pequeños */
-  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
-  /* Estilos para pantallas grandes (escritorios) */
 }
 .nav ul {
   list-style: none;
@@ -33,68 +30,23 @@
   margin-left: auto;
   margin-right: 30px;
 }
-.nav ul li {
+.nav ul .li-icon {
   display: inline-block;
   margin-right: 40px;
 }
-.nav ul li:last-child {
+.nav ul .li-icon:last-child {
   margin-right: 0; /* Elimina el margen derecho del último elemento */
 }
-.nav ul li a {
+.nav ul .li-icon a {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease; /* Transición suave del color */
+  border: 2px solid red;
 }
-.nav ul li:hover {
+.nav ul .li-icon:hover {
   transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
 }
-.nav ul li .icon {
+.nav ul .li-icon .icon {
   color: #ffffff;
   padding-right: 2px;
-}
-@media screen and (max-width: 767px) {
-  .nav {
-    height: auto; /* Altura automática para acomodar el contenido */
-    padding: 10px; /* Espaciado interno */
-    justify-content: flex-start; /* Alinear elementos a la izquierda */
-  }
-  .nav ul {
-    flex-direction: column; /* Alinear elementos verticalmente */
-    align-items: flex-start; /* Alinear elementos a la izquierda */
-    margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
-    width: 100%;
-  }
-  .nav li {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 10px;
-    text-align: left; /* Alinear texto al centro */
-    width: 100%;
-  }
-  .nav li li:first-child {
-    width: 100%;
-    margin: 0 !important;
-  }
-  .nav .logout-content {
-    width: 100%;
-    margin: 0 !important;
-  }
-  .nav li .icon {
-    margin-right: 0; /* Eliminar el margen entre el icono y el texto */
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .nav ul {
-    justify-content: space-evenly; /* Espaciado uniforme entre elementos */
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .nav ul {
-    justify-content: space-between; /* Espaciado automático entre elementos */
-  }
-}
-@media screen and (min-width: 1441px) {
-  .nav ul {
-    justify-content: center; /* Alinear elementos al centro */
-  }
 }

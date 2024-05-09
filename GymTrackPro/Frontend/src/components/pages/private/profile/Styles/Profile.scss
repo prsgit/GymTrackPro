@@ -22,48 +22,52 @@
   flex-direction: column; /* Alinea los elementos en una columna */
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
-}
 
-.main-content {
-  margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
-}
+  .main-content {
+    margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
+  }
 
-.profile {
-  width: 100%;
-  margin-bottom: 20px;
-}
+  .profile {
+    width: 100%;
+    margin-bottom: 20px;
+    image {
+      width: 3em;
+      height: 3em;
+    }
+  }
 
-.profile label {
-  display: block;
-  font-weight: bold;
-}
+  .profile label {
+    display: block;
+    font-weight: bold;
+  }
 
-.profile input[type="text"],
-.profile input[type="email"],
-.profile input[type="password"] {
-  background-color: $white;
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid $violet;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
+  .profile input[type="text"],
+  .profile input[type="email"],
+  .profile input[type="password"] {
+    background-color: $white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid $violet;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 
-.btn {
-  display: block;
-  width: auto;
-  max-width: 400px;
-  font-family: Poppins;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: $success;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
+  .btn {
+    display: block;
+    width: auto;
+    max-width: 400px;
+    font-family: Poppins;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: $success;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
-.btn:hover {
-  background-color: $success-hover;
+  .btn:hover {
+    background-color: $success-hover;
+  }
 }

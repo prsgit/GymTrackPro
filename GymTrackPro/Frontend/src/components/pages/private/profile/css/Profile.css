@@ -20,24 +20,24 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 }
-
-.main-content {
+.profile-form .main-content {
   margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
 }
-
-.profile {
+.profile-form .profile {
   width: 100%;
   margin-bottom: 20px;
 }
-
-.profile label {
+.profile-form .profile image {
+  width: 3em;
+  height: 3em;
+}
+.profile-form .profile label {
   display: block;
   font-weight: bold;
 }
-
-.profile input[type=text],
-.profile input[type=email],
-.profile input[type=password] {
+.profile-form .profile input[type=text],
+.profile-form .profile input[type=email],
+.profile-form .profile input[type=password] {
   background-color: #ffffff;
   width: 100%;
   padding: 10px;
@@ -46,8 +46,7 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
-
-.btn {
+.profile-form .btn {
   display: block;
   width: auto;
   max-width: 400px;
@@ -60,7 +59,6 @@
   font-size: 16px;
   cursor: pointer;
 }
-
-.btn:hover {
+.profile-form .btn:hover {
   background-color: #45a049;
 }
