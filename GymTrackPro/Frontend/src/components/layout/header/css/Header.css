@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 header {
   color: #ffffff;
-  height: 100px;
+  height: 120px;
   width: 100%;
-  font-family: Poppins;
-  font-size: 20px;
+  font-family: "Poppins";
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;

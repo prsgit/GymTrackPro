@@ -2,23 +2,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .workout-content {
   display: flex;
-  align-items: center;
 }
 .workout-content div {
-  border: 2px solid white;
+  border: 2px solid #333;
   margin: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
 }
 .workout-content div p.type-workout {
-  color: #ffffff;
+  color: #333;
   font-size: 22px;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-weight: bold;
+  text-align: center;
 }
 .workout-content div p.workout-description {
-  color: #ffffff;
+  color: #333;
   font-size: 18px;
-  /* font-weight: bold; */
-  font-family: monospace;
+  font-family: "Poppins";
+  text-align: justify;
+  padding: 0 15px;
+}
+.workout-content div .image-container {
+  border: none;
+  display: flex;
+  justify-content: center;
 }
 .workout-content div .image-workout {
   cursor: pointer;
@@ -34,20 +42,21 @@
   transform: scale(1.1);
 }
 .workout-content .workout div p.name {
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: bold;
+  color: #333;
+  font-size: 25px;
   font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
 }
 .workout-content .workout div p.series {
-  color: #ffffff;
+  color: #333;
   font-size: 18px;
-  font-weight: bold;
   font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
 }
 .workout-content .workout div p.description {
-  color: #ffffff;
+  color: #333;
   font-size: 18px;
-  /* font-weight: bold; */
-  font-family: monospace;
+  font-family: "Poppins";
 }

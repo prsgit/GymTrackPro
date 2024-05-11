@@ -24,6 +24,15 @@ const Entrenamientos = () => {
         }
 
         const data = await request.json();
+
+        // let image = `http://localhost:4000/api/workouts/workout/${imageUrl}`;
+
+        // const images = data.typeWorkout.map((entrenamiento) => {
+        //   const imageUrl = `http://localhost:4000/api/workouts/workout/${entrenamiento.image}`;
+        //   return imageUrl;
+        // });
+        // console.log(images);
+
         setWorkoutData(data.typeWorkout);
       } catch (error) {
         console.error("Error:", error);
@@ -60,10 +69,9 @@ const Entrenamientos = () => {
         <p>
           Los ejercicios de resistencia fortalecen los músculos con pesas,
           bandas elásticas o el propio peso corporal.Mejoran la resistencia
-          muscular y aeróbica, y ofrecen beneficios como aumento de la fuerza,
-          salud cardiovascular mejorada, control del azúcar en sangre, menor
-          riesgo de osteoporosis, bienestar mental y emocional, control del peso
-          y mejora del sueño.
+          muscular y aeróbica, ofrecen beneficios como aumento de la fuerza,
+          salud cardiovascular mejorada, control del azúcar, bienestar mental,
+          emocional, control del peso y mejora del sueño.
         </p>
       ),
     },
@@ -99,11 +107,13 @@ const Entrenamientos = () => {
           key={tipoEjercicio.tipo}
           onClick={() => handleTipoSeleccionado(tipoEjercicio.tipo)}
         >
-          <img
-            src={tipoEjercicio.image}
-            alt={tipoEjercicio.tipo}
-            className="image-workout"
-          />
+          <div className="image-container">
+            <img
+              src={tipoEjercicio.image}
+              alt={tipoEjercicio.tipo}
+              className="image-workout"
+            />
+          </div>
           <p className="type-workout">{tipoEjercicio.tipo}</p>
           <p className="workout-description">{tipoEjercicio.descripcion}</p>
         </div>
@@ -120,7 +130,7 @@ const Entrenamientos = () => {
                 <p className="name">{entrenamiento.name}</p>
                 <p className="series">Series: {entrenamiento.additionalInfo}</p>
                 <p className="description">{entrenamiento.description}</p>
-                <img src={entrenamiento.image} alt={entrenamiento.name} />
+                <img src={""} alt={entrenamiento.name} />
               </div>
             ))}
         </div>

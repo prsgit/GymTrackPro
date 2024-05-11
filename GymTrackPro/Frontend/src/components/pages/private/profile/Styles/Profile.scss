@@ -30,9 +30,11 @@
   .profile {
     width: 100%;
     margin-bottom: 20px;
-    image {
-      width: 3em;
-      height: 3em;
+    img {
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 

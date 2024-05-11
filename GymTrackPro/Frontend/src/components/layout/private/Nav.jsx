@@ -6,10 +6,18 @@ import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 // import { Global } from "../../../helpers/Global";
-// import imageProfile from "../../../assets/image/user.png";
+// import imageProfile from "../../../assets/image/profile.jpg";
+
 const Nav = () => {
   let user = localStorage.getItem("user");
   let userString = JSON.parse(user);
+
+  // let userImage = userString.image;
+
+  // let imageUrl =
+  //   userImage !== "default.png"
+  //     ? Global.url + "user/avatar/" + userImage
+  //     : imageProfile;
 
   return (
     <>
@@ -34,9 +42,7 @@ const Nav = () => {
             </li>
 
             <li className="image-profile">
-              <img src="" alt="foto perfil" />
-              {/* {userString.image != "default.png" && <img src={Global.url + "user/avatar/" + userString.image} className="image"alt="Foto de perfil"/>}
-              {userString.image == "default.png" && <img src={imageProfile} className="image"alt="Foto de perfil"/>} */}
+              <img src={""} alt="foto perfil" />
             </li>
           </ul>
         </ul>

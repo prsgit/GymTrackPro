@@ -2,23 +2,33 @@
 
 .workout-content {
   display: flex;
-  align-items: center;
+
   div {
-    border: 2px solid white;
+    border: 2px solid $footer;
     margin: 20px;
+    background-color: $white;
+    border-radius: 15px;
 
     p.type-workout {
-      color: $white;
+      color: $footer;
       font-size: 22px;
-      font-family: Poppins;
+      font-family: "Poppins";
       font-weight: bold;
+      text-align: center;
     }
 
     p.workout-description {
-      color: $white;
+      color: $footer;
       font-size: 18px;
-      /* font-weight: bold; */
-      font-family: monospace;
+      font-family: "Poppins";
+      text-align: justify;
+      padding: 0 15px;
+    }
+
+    .image-container {
+      border: none;
+      display: flex;
+      justify-content: center;
     }
 
     .image-workout {
@@ -38,24 +48,25 @@
   .workout {
     div {
       p.name {
-        color: $white;
-        font-size: 22px;
-        font-weight: bold;
+        color: $footer;
+        font-size: 25px;
         font-family: "Poppins";
+        font-weight: bold;
+        text-align: center;
       }
 
       p.series {
-        color: $white;
+        color: $footer;
         font-size: 18px;
-        font-weight: bold;
         font-family: "Poppins";
+        font-weight: bold;
+        text-align: center;
       }
 
       p.description {
-        color: $white;
+        color: $footer;
         font-size: 18px;
-        /* font-weight: bold; */
-        font-family: monospace;
+        font-family: "Poppins";
       }
     }
   }

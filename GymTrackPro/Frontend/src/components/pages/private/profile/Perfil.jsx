@@ -2,13 +2,21 @@
 import "./css/Profile.css";
 
 import { Global } from "../../../../helpers/Global";
-import { useEffect } from "react";
-// import imageProfile from "../../../../assets/image/user.png";
+import { useEffect, useState } from "react";
+import imageProfile from "../../../../assets/image/profile.jpg";
 
 const Perfil = () => {
   let user = localStorage.getItem("user");
   let userString = JSON.parse(user);
-  // let userImage = userString.image;
+
+  let userImage = userString.image;
+
+  let imageUrl =
+    userImage !== "default.png"
+      ? Global.url + "user/avatar/" + userImage
+      : imageProfile;
+
+  const [setNewImage] = useState(null);
 
   // const [saved , setSaved]=useState("not_saved");
 
@@ -33,6 +41,12 @@ const Perfil = () => {
     fetchImage();
   }, []);
 
+  const handleImageChange = (e) => {
+    //Par poder hacer click en la imagen y pueda cambiarla.
+    const file = e.target.files[0];
+    setNewImage(file);
+  };
+
   const updateUser = async (e) => {
     e.preventDefault();
   };
@@ -49,6 +63,17 @@ const Perfil = () => {
           </strong>
 
           <form className="profile-form" onSubmit={updateUser}>
+            <div className="profile">
+              <label htmlFor="fileInput">
+                <img src={imageUrl} alt="perfil" />
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={handleImageChange}
+              />
+            </div>
             <div className="profile">
               <label htmlFor="name">Nombre</label>
               <input type="text" name="name" defaultValue={userString.name} />
@@ -76,11 +101,6 @@ const Perfil = () => {
             <div className="profile">
               <label htmlFor="password">Contraseña</label>
               <input type="password" name="password" />
-            </div>
-            <div className="profile">
-              <label htmlFor="file0">Imagen</label>
-              <img src="" alt="perfil" />
-              <input type="file" name="file0" id="file" />
             </div>
 
             <button type="submit" className="btn">
