@@ -1,12 +1,99 @@
+// @import "../../../../variables/Variables.scss";
+
+// .workout-content {
+//   display: flex;
+
+//   div {
+//     border: 2px solid $footer;
+//     margin: 20px;
+//     background-color: $white;
+//     border-radius: 15px;
+
+//     p.type-workout {
+//       color: $footer;
+//       font-size: 22px;
+//       font-family: "Poppins";
+//       font-weight: bold;
+//       text-align: center;
+//     }
+
+//     p.workout-description {
+//       color: $footer;
+//       font-size: 18px;
+//       font-family: "Poppins";
+//       text-align: justify;
+//       padding: 0 15px;
+//     }
+
+//     .image-container {
+//       border: none;
+//       display: flex;
+//       justify-content: center;
+//     }
+
+//     .image-workout {
+//       cursor: pointer;
+//       width: 15em;
+//       height: 12em;
+//       margin-top: 10px;
+//       border-radius: 8px;
+//       border: 1px solid black;
+//       box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+//       transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+//       &:hover {
+//         transform: scale(1.1);
+//       }
+//     }
+//   }
+//   .workout {
+//     div {
+//       p.name {
+//         color: $footer;
+//         font-size: 25px;
+//         font-family: "Poppins";
+//         font-weight: bold;
+//         text-align: center;
+//       }
+
+//       p.series {
+//         color: $footer;
+//         font-size: 18px;
+//         font-family: "Poppins";
+//         font-weight: bold;
+//         text-align: center;
+//       }
+
+//       p.description {
+//         color: $footer;
+//         font-size: 18px;
+//         font-family: "Poppins";
+//       }
+//     }
+//   }
+// }
+
+//----------------------------------------------------------------------
+
 @import "../../../../variables/Variables.scss";
 
 .workout-content {
   display: flex;
+  flex-direction: column;
+
+  .types {
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+
+    .type {
+      background-color: $white;
+      border: 2px solid $footer;
+      width: 100%;
+    }
+  }
 
   div {
-    border: 2px solid $footer;
     margin: 20px;
-    background-color: $white;
     border-radius: 15px;
 
     p.type-workout {
@@ -33,12 +120,12 @@
 
     .image-workout {
       cursor: pointer;
-      width: 15em;
-      height: 12em;
+      max-width: 15em;
+      width: 100%;
       margin-top: 10px;
       border-radius: 8px;
       border: 1px solid black;
-      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
       transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
       &:hover {
         transform: scale(1.1);
@@ -47,6 +134,14 @@
   }
   .workout {
     div {
+      text-align: center;
+      background-color: $white;
+      border: 2px solid $footer;
+
+      img.imagenes {
+        max-width: 100%;
+      }
+
       p.name {
         color: $footer;
         font-size: 25px;
@@ -67,7 +162,19 @@
         color: $footer;
         font-size: 18px;
         font-family: "Poppins";
+        text-align: justify;
+        padding: 0 20px;
       }
     }
+  }
+  .scroll-up {
+    float: right;
+    margin-right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

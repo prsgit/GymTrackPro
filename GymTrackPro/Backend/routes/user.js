@@ -25,13 +25,15 @@ const storage = multer.diskStorage({
 
 const uploads = multer({ storage }); // uploads funciona como middleware(tipo check.auth).
 
+module.exports = uploads;
+
 //Definir rutas
 router.get("/testing", check.auth, userController.prueba);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.get("/profile/:id", check.auth, userController.profile);
 router.put("/update", check.auth, userController.update);
-router.post(
+router.put(
   "/upload",
   [check.auth, uploads.single("file0")],
   userController.upload

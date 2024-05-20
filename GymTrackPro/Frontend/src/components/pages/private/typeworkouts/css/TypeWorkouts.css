@@ -2,11 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .workout-content {
   display: flex;
+  flex-direction: column;
+}
+.workout-content .types {
+  display: flex;
+  gap: 5px;
+  overflow-x: scroll;
+}
+.workout-content .types .type {
+  background-color: #ffffff;
+  border: 2px solid #333;
+  width: 100%;
 }
 .workout-content div {
-  border: 2px solid #333;
   margin: 20px;
-  background-color: #ffffff;
   border-radius: 15px;
 }
 .workout-content div p.type-workout {
@@ -30,16 +39,24 @@
 }
 .workout-content div .image-workout {
   cursor: pointer;
-  width: 15em;
-  height: 12em;
+  max-width: 15em;
+  width: 100%;
   margin-top: 10px;
   border-radius: 8px;
   border: 1px solid black;
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
   transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
 }
 .workout-content div .image-workout:hover {
   transform: scale(1.1);
+}
+.workout-content .workout div {
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid #333;
+}
+.workout-content .workout div img.imagenes {
+  max-width: 100%;
 }
 .workout-content .workout div p.name {
   color: #333;
@@ -59,4 +76,16 @@
   color: #333;
   font-size: 18px;
   font-family: "Poppins";
+  text-align: justify;
+  padding: 0 20px;
+}
+.workout-content .scroll-up {
+  float: right;
+  margin-right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

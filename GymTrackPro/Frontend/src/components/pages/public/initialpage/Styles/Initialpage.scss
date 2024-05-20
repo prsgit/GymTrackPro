@@ -27,6 +27,14 @@
     height: auto;
   }
 
+  .desktop-img {
+    display: block;
+  }
+
+  .mobile-img {
+    display: none;
+  }
+
   .text {
     position: absolute; /* Establece la posición absoluta para que se coloque encima de la imagen */
     color: $white;
@@ -52,12 +60,11 @@
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 50%;
-    top: 11em;
-    width: 170px;
-    height: 69px;
+    width: auto;
+    height: auto;
     animation: bounce 2s ease infinite;
+    display: block;
+    margin: 0 auto;
   }
 
   button:hover {
@@ -67,6 +74,13 @@
 
   /*pantallas de hasta 767px de ancho */
   @media screen and (max-width: 767px) {
+    .desktop-img {
+      display: none;
+    }
+
+    .mobile-img {
+      display: block;
+    }
   }
 
   /*pantallas de 768px a 1024px de ancho */

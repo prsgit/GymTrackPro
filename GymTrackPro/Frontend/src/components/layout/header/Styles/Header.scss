@@ -21,6 +21,14 @@ header {
   @media screen and (max-width: 767px) {
     height: auto; /* Altura automática para adaptarse al contenido */
     justify-content: center; /* Alinear elementos al centro */
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .icon {
+      font-size: 1.75em;
+    }
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1440px) {

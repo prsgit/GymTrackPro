@@ -4,12 +4,11 @@
 .nav {
   background-color: #69306d;
   height: 122px;
-  width: 100%;
   font-family: "Poppins";
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: #ffffff;
   /* Estilos para dispositivos móviles */
   /* Estilos para tabletas y dispositivos pequeños */
@@ -24,16 +23,22 @@
   display: flex;
   font-size: 20px;
 }
-.nav ul.logout-content {
-  width: 153px;
-}
-.nav ul.logout-content:first-of-type {
-  margin-right: auto;
+.nav ul.main-content {
   margin-left: 30px;
 }
-.nav ul.logout-content:last-of-type {
-  margin-left: auto;
+.nav ul.logout-content {
   margin-right: 30px;
+}
+.nav ul.logout-content li {
+  display: flex;
+  align-items: center;
+}
+.nav ul.logout-content li:hover {
+  transform: unset;
+}
+.nav ul.logout-content .image-profile img {
+  max-height: 80px;
+  border-radius: 50%;
 }
 .nav ul li {
   display: inline-block;
@@ -59,12 +64,20 @@
     height: auto; /* Altura automática para acomodar el contenido */
     padding: 10px; /* Espaciado interno */
     justify-content: flex-start; /* Alinear elementos a la izquierda */
+    flex-direction: column;
   }
   .nav ul {
     flex-direction: column; /* Alinear elementos verticalmente */
     align-items: flex-start; /* Alinear elementos a la izquierda */
     margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
     width: 100%;
+  }
+  .nav ul.main-content, .nav ul.logout-content {
+    margin-left: 15px;
+  }
+  .nav ul.logout-content {
+    margin-right: 0;
+    margin-top: 0;
   }
   .nav li {
     display: block;
@@ -73,13 +86,8 @@
     text-align: left; /* Alinear texto al centro */
     width: 100%;
   }
-  .nav li li:first-child {
-    width: 100%;
-    margin: 0 !important;
-  }
   .nav .logout-content {
     width: 100%;
-    margin: 0 !important;
   }
   .nav li .icon {
     margin-right: 0; /* Eliminar el margen entre el icono y el texto */

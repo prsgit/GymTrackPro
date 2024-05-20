@@ -1,13 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .main-content .alert-success {
-  color: #ffffff;
+  font-weight: bold;
+  color: #4caf50;
 }
 .main-content .alert-error {
-  color: #ffffff;
+  font-weight: bold;
+  color: #ff0000;
 }
-
-.profile-form {
+.main-content .profile-form {
   font-family: Poppins;
   max-width: 400px;
   margin: 50px auto 50px auto;
@@ -20,26 +21,30 @@
   justify-content: center; /* Centra verticalmente los elementos */
   align-items: center; /* Centra horizontalmente los elementos */
 }
-.profile-form .main-content {
+.main-content .profile-form .main-content {
   margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
 }
-.profile-form .profile {
+.main-content .profile-form .profile {
   width: 100%;
   margin-bottom: 20px;
 }
-.profile-form .profile img {
-  width: 5em;
-  height: 5em;
+.main-content .profile-form .profile img {
+  width: 6em;
+  height: 6em;
   border-radius: 50%;
   cursor: pointer;
 }
-.profile-form .profile label {
+.main-content .profile-form .profile .image-label {
+  display: flex;
+  justify-content: center;
+}
+.main-content .profile-form .profile label {
   display: block;
   font-weight: bold;
 }
-.profile-form .profile input[type=text],
-.profile-form .profile input[type=email],
-.profile-form .profile input[type=password] {
+.main-content .profile-form .profile input[type=text],
+.main-content .profile-form .profile input[type=email],
+.main-content .profile-form .profile input[type=password] {
   background-color: #ffffff;
   width: 100%;
   padding: 10px;
@@ -48,7 +53,7 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
-.profile-form .btn {
+.main-content .profile-form .btn {
   display: block;
   width: auto;
   max-width: 400px;
@@ -61,6 +66,6 @@
   font-size: 16px;
   cursor: pointer;
 }
-.profile-form .btn:hover {
+.main-content .profile-form .btn:hover {
   background-color: #45a049;
 }

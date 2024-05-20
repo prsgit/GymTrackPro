@@ -7,6 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const user = require("../models/user");
+const { log } = require("console");
 
 //test de prueba---------------------------------------------------------------------------------------
 const prueba = (req, res) => {
@@ -239,6 +240,7 @@ const update = async (req, res) => {
     let userUpdated = await User.findByIdAndUpdate(
       userIdentity.id,
       userToUpdate,
+
       { new: true }
     ); // Esto último nos devuelve el objeto actualizado.
 
@@ -253,6 +255,7 @@ const update = async (req, res) => {
     return res.status(200).send({
       status: "success",
       user: userUpdated,
+      message: "usuario actualizado",
     });
   } catch (error) {
     return res.status(500).send({
@@ -262,7 +265,7 @@ const update = async (req, res) => {
   }
 };
 
-//------------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 
 const upload = async (req, res) => {
   try {
