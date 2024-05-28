@@ -11,9 +11,6 @@
   justify-content: space-between;
   color: #ffffff;
   /* Estilos para dispositivos móviles */
-  /* Estilos para tabletas y dispositivos pequeños */
-  /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
-  /* Estilos para pantallas grandes (escritorios) */
 }
 .nav ul {
   list-style: none;
@@ -36,13 +33,17 @@
 .nav ul.logout-content li:hover {
   transform: unset;
 }
+.nav ul.logout-content .logout:hover {
+  transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
+}
 .nav ul.logout-content .image-profile img {
-  max-height: 80px;
+  max-height: 72px;
   border-radius: 50%;
 }
 .nav ul li {
   display: inline-block;
   margin-right: 40px;
+  padding-left: 10px;
 }
 .nav ul li:last-child {
   margin-right: 0; /* Elimina el margen derecho del último elemento */
@@ -59,9 +60,10 @@
   color: #ffffff;
   padding-right: 2px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .nav {
     height: auto; /* Altura automática para acomodar el contenido */
+    width: 100%;
     padding: 10px; /* Espaciado interno */
     justify-content: flex-start; /* Alinear elementos a la izquierda */
     flex-direction: column;
@@ -93,17 +95,12 @@
     margin-right: 0; /* Eliminar el margen entre el icono y el texto */
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .nav ul {
-    justify-content: space-evenly; /* Espaciado uniforme entre elementos */
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (max-width: 1200px) {
   .nav ul {
     justify-content: space-between; /* Espaciado automático entre elementos */
   }
 }
-@media screen and (min-width: 1441px) {
+@media screen and (min-width: 1200px) {
   .nav ul {
     justify-content: center; /* Alinear elementos al centro */
   }

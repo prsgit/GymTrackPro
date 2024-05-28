@@ -11,6 +11,14 @@ header {
   justify-content: center;
   position: relative; /* Establece posición relativa para que podamos posicionar la imagen */
 
+  a {
+    text-decoration: none;
+  }
+
+  .name {
+    color: $white;
+  }
+
   .icon {
     margin-right: 5px;
     color: $white;
@@ -18,7 +26,7 @@ header {
 
   // Media queries
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     height: auto; /* Altura automática para adaptarse al contenido */
     justify-content: center; /* Alinear elementos al centro */
 
@@ -31,19 +39,7 @@ header {
     }
   }
 
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    header {
-      height: auto; /* Reducir la altura del encabezado */
-      padding: 0 20px; /* Añadir un poco de espacio interno */
-      justify-content: center;
-    }
-
-    .logo {
-      margin-left: 20px; /* Añadir margen izquierdo al logo */
-    }
-  }
-
-  @media screen and (min-width: 1441px) {
+  @media screen and (max-width: 1200px) {
     header {
       height: 120px; /* Aumentar la altura del encabezado */
       padding: 0 40px; /* Añadir más espacio interno */
@@ -51,5 +47,8 @@ header {
     .logo {
       margin-left: 20px; /* Añadir más margen izquierdo al logo */
     }
+  }
+
+  @media screen and (min-width: 1200px) {
   }
 }

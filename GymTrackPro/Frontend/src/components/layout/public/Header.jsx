@@ -9,7 +9,10 @@ const Header = () => {
         <NavLink to={"/login"}>
           <FontAwesomeIcon icon={faDumbbell} size="2xl" className="icon" />
         </NavLink>
-        <h1>GymTrackPro</h1>
+
+        <NavLink to={"/login"}>
+          <h1 className="name">GymTrackPro</h1>
+        </NavLink>
       </header>
     </>
   );

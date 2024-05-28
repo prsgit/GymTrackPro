@@ -56,19 +56,7 @@ const Entrenamientos = () => {
         </p>
       ),
     },
-    {
-      tipo: "Resistencia",
-      image: resistencia,
-      descripcion: (
-        <p>
-          Los ejercicios de resistencia fortalecen los músculos con pesas,
-          bandas elásticas o el propio peso corporal.Mejoran la resistencia
-          muscular y aeróbica, ofrecen beneficios como aumento de la fuerza,
-          salud cardiovascular mejorada, control del azúcar, bienestar mental,
-          emocional, control del peso y mejora del sueño.
-        </p>
-      ),
-    },
+
     {
       tipo: "Hipertrofia",
       image: hipertrofia,
@@ -80,6 +68,19 @@ const Entrenamientos = () => {
           repeticiones y cargas específicas.Los beneficios incluyen aumento de
           la masa muscular, mejora del rendimiento físico, fortalecimiento de
           los huesos y reducción del riesgo de lesiones.
+        </p>
+      ),
+    },
+    {
+      tipo: "Resistencia",
+      image: resistencia,
+      descripcion: (
+        <p>
+          Los ejercicios de resistencia fortalecen los músculos con pesas,
+          bandas elásticas o el propio peso corporal.Mejoran la resistencia
+          muscular y aeróbica, ofrecen beneficios como aumento de la fuerza,
+          salud cardiovascular mejorada, control del azúcar, bienestar mental,
+          emocional, control del peso y mejora del sueño.
         </p>
       ),
     },
@@ -95,7 +96,7 @@ const Entrenamientos = () => {
   };
 
   const scrollUp = () => {
-    const scrollStep = -window.scrollY / (3000 / 20);
+    const scrollStep = -window.scrollY / (1000 / 20);
     const scrollInterval = setInterval(() => {
       if (window.scrollY !== 0) {
         window.scrollBy(0, scrollStep);

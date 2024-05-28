@@ -1,6 +1,6 @@
 import "./css/Initialpage.css";
-import initial from "../../../../assets/image/initial.jpg";
-import initialMobile from "../../../../assets/image/error404.jpg";
+// import initial from "../../../../assets/image/initial.jpg";
+import gym from "../../../../assets/image/initial-mobile.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Initialpage = () => {
@@ -13,8 +13,8 @@ const Initialpage = () => {
   return (
     <>
       <div className="initial">
-        <img className="desktop-img" src={initial} alt="front-cover" />
-        <img className="mobile-img" src={initialMobile} alt="front-cover" />
+        <img className="desktop-img" src={gym} alt="front-cover" />
+
         <span className="text">
           Tu transformación comienza aquí, tan sólo estás a un click!
           <button className="btn-initial" onClick={handleClick}>

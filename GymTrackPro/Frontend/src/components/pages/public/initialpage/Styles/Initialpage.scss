@@ -18,9 +18,6 @@
 
 .initial {
   position: relative; /* Establece la posición relativa para poder posicionar los elementos hijos */
-  background-size: 20%; /* Ajusta la imagen para cubrir todo el contenedor */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat;
 
   img {
     width: 100%;
@@ -72,26 +69,23 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
-  /*pantallas de hasta 767px de ancho */
-  @media screen and (max-width: 767px) {
-    .desktop-img {
-      display: none;
+  /*pantallas hasta 768px de ancho */
+  @media screen and (max-width: 768px) {
+    .initial {
+      .text {
+        font-size: 40px;
+        color: red;
+
+        .btn-initial {
+          font-size: 20px;
+        }
+      }
     }
-
-    .mobile-img {
-      display: block;
-    }
   }
-
-  /*pantallas de 768px a 1024px de ancho */
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*pantallas hasta 1200px de ancho */
+  @media screen and (max-width: 1200px) {
   }
-
-  /*pantallas de 1025px a 1440px de ancho */
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
-  }
-
-  /*pantallas de 1441px de ancho en adelante */
-  @media screen and (min-width: 1441px) {
+  /*pantallas más de  1200px de ancho */
+  @media screen and (min-width: 1200px) {
   }
 }

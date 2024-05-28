@@ -51,32 +51,21 @@
 
     /* Media queries*/
 
-    /* Estilos para dispositivos móviles */
-    @media screen and (max-width: 767px) {
-      .carousel {
-        max-width: 100%; /* Ancho máximo adaptado para dispositivos móviles */
+    /*pantallas hasta 768px de ancho */
+    @media screen and (max-width: 768px) {
+    }
+    /*pantallas hasta 1200px de ancho */
+    @media screen and (max-width: 1200px) {
+      .carousel-content {
+        .slide .carousel {
+          display: flex;
+          align-items: center;
+          height: 70vh;
+        }
       }
     }
-
-    /* Estilos para tabletas y dispositivos pequeños */
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .carousel {
-        max-width: 800px; /* Ancho máximo adaptado para tabletas */
-      }
-    }
-
-    /* Estilos para pantallas medianas (laptops y escritorios pequeños) */
-    @media screen and (min-width: 1025px) and (max-width: 1440px) {
-      .carousel {
-        max-width: 1000px; /* Ancho máximo adaptado para pantallas medianas */
-      }
-    }
-
-    /* Estilos para pantallas grandes (escritorios) */
-    @media screen and (min-width: 1441px) {
-      .carousel {
-        max-width: 1200px; /* Ancho máximo adaptado para pantallas grandes */
-      }
+    /*pantallas más de  1200px de ancho */
+    @media screen and (min-width: 1200px) {
     }
   }
 }

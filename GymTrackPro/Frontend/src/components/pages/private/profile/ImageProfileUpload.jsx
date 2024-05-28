@@ -28,7 +28,7 @@ export const ImageProfileUpload = () => {
       });
 
       const data = await request.json();
-      console.log(data);
+      console.log(data, "imagen");
 
       //   if (data.status == "success") {
       //     localStorage.setItem("user", JSON.stringify(formData));

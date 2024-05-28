@@ -3,11 +3,13 @@
 .workout-content {
   display: flex;
   flex-direction: column;
+  /*pantallas hasta 768px de ancho */
+  /*pantallas hasta 1200px de ancho */
+  /*pantallas más de  1200px de ancho */
 }
 .workout-content .types {
   display: flex;
   gap: 5px;
-  overflow-x: scroll;
 }
 .workout-content .types .type {
   background-color: #ffffff;
@@ -88,4 +90,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #69306d;
+  cursor: pointer;
+}
+.workout-content .scroll-up:hover {
+  transform: scale(1.1);
+}
+.workout-content .scroll-up .icon {
+  height: 32px;
+}
+.workout-content .scroll-up .icon:hover {
+  transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
+}
+@media screen and (max-width: 1200px) {
+  .workout-content .workout-content .workout p.name {
+    color: red;
+  }
 }

@@ -13,13 +13,9 @@
 }
 .initial {
   position: relative; /* Establece la posición relativa para poder posicionar los elementos hijos */
-  background-size: 20%; /* Ajusta la imagen para cubrir todo el contenedor */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat;
-  /*pantallas de hasta 767px de ancho */
-  /*pantallas de 768px a 1024px de ancho */
-  /*pantallas de 1025px a 1440px de ancho */
-  /*pantallas de 1441px de ancho en adelante */
+  /*pantallas hasta 768px de ancho */
+  /*pantallas hasta 1200px de ancho */
+  /*pantallas más de  1200px de ancho */
 }
 .initial img {
   width: 100%;
@@ -62,11 +58,12 @@
   background-color: #a5668b;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 767px) {
-  .initial .desktop-img {
-    display: none;
+@media screen and (max-width: 768px) {
+  .initial .initial .text {
+    font-size: 40px;
+    color: red;
   }
-  .initial .mobile-img {
-    display: block;
+  .initial .initial .text .btn-initial {
+    font-size: 20px;
   }
 }
