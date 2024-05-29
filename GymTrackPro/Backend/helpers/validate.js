@@ -59,19 +59,6 @@ const validateUser = (params, isEditing = false) => {
     }
   }
 
-  if (params.image !== undefined || params.image !== null) {
-    let validImageExtensions = ["jpg", "jpeg", "png", "gif"];
-    let imageExtension = params.image.split(".").pop().toLowerCase();
-
-    let imageValid = validImageExtensions.includes(imageExtension);
-
-    if (!imageValid) {
-      throw new Error("The validation for 'image' hasn´t been passed");
-    } else {
-      console.log("Validation passed for image");
-    }
-  }
-
   // Si estamos en modo edición, comprobamos si hay algún error
   if (isEditing) {
     const hasErrors = Object.values(errors).some((error) => error !== null);

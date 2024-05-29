@@ -239,7 +239,6 @@ const update = async (req, res) => {
     // Buscar usuario en la bd y actualizar datos
     let userUpdated = await User.findByIdAndUpdate(
       userIdentity.id,
-      { image: req.file.filename },
       userToUpdate,
 
       { new: true }
