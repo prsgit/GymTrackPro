@@ -7,7 +7,6 @@
   .types {
     display: flex;
     gap: 5px;
-    // overflow-x: scroll; utilizar para mobile en las queries.
 
     .type {
       background-color: $white;
@@ -22,7 +21,7 @@
 
     p.type-workout {
       color: $footer;
-      font-size: 22px;
+      font-size: 20px;
       font-family: "Poppins";
       font-weight: bold;
       text-align: center;
@@ -30,7 +29,7 @@
 
     p.workout-description {
       color: $footer;
-      font-size: 18px;
+      font-size: 16px;
       font-family: "Poppins";
       text-align: justify;
       padding: 0 15px;
@@ -45,7 +44,7 @@
     .image-workout {
       cursor: pointer;
       max-width: 15em;
-      width: 100%;
+      width: 70%;
       margin-top: 10px;
       border-radius: 8px;
       border: 1px solid black;
@@ -63,7 +62,7 @@
       border: 2px solid $footer;
 
       img.imagenes {
-        max-width: 100%;
+        max-width: 35%;
       }
 
       p.name {
@@ -115,14 +114,69 @@
 
   /*pantallas hasta 768px de ancho */
   @media screen and (max-width: 768px) {
+    div {
+      p.workout-description {
+        font-size: 12px;
+      }
+      p.type-workout {
+        font-size: 16px;
+      }
+      .image-workout {
+        width: 70%;
+      }
+    }
+    .types {
+      display: block;
+      .type {
+        width: auto;
+      }
+    }
+
+    .workout {
+      div {
+        p.name {
+          font-size: 13px;
+        }
+        img.imagenes {
+          max-width: 90%;
+        }
+        p.series {
+          font-size: 13px;
+        }
+        p.description {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
-  /*pantallas hasta 1200px de ancho */
-  @media screen and (max-width: 1200px) {
-    .workout-content {
-      .workout {
+  // /*pantallas hasta 1200px de ancho */
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    div {
+      p.workout-description {
+        font-size: 18px;
+      }
+      p.type-workout {
+        font-size: 21px;
+      }
+      .image-workout {
+        width: 75%;
+      }
+    }
+
+    .workout {
+      div {
         p.name {
-          color: red;
+          font-size: 25px;
+        }
+        img.imagenes {
+          max-width: 50%;
+        }
+        p.series {
+          font-size: 22px;
+        }
+        p.description {
+          font-size: 20px;
         }
       }
     }

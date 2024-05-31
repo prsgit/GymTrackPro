@@ -1,5 +1,19 @@
 @import "../../../../variables/Variables.scss";
 
+.layout-content {
+  @media screen and (max-width: 768px) {
+    .contact-form {
+      textarea {
+        max-width: 245px;
+      }
+    }
+  }
+
+  // /*pantallas hasta 1200px de ancho */
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+  }
+}
+
 .contact-form {
   font-family: Poppins;
   max-width: 400px;
@@ -70,5 +84,20 @@
 
   .btn:hover {
     background-color: $success-hover;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .contact {
+      label {
+        font-size: 20px;
+      }
+    }
+    .btn {
+      font-size: 20px;
+    }
+
+    textarea {
+      max-width: 375px;
+    }
   }
 }

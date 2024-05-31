@@ -1,5 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@media screen and (max-width: 768px) {
+  .layout-content .contact-form textarea {
+    max-width: 245px;
+  }
+}
 .contact-form {
   font-family: Poppins;
   max-width: 400px;
@@ -63,4 +68,15 @@
 }
 .contact-form .btn:hover {
   background-color: #45a049;
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .contact-form .contact label {
+    font-size: 20px;
+  }
+  .contact-form .btn {
+    font-size: 20px;
+  }
+  .contact-form textarea {
+    max-width: 375px;
+  }
 }

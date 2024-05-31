@@ -80,4 +80,8 @@
       background-color: $success-hover;
     }
   }
+
+  // /*pantallas hasta 1200px de ancho */
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+  }
 }

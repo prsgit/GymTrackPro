@@ -8,6 +8,12 @@
 .login-content .alert-error {
   color: #ffffff;
 }
+@media screen and (max-width: 768px) {
+  .login-content {
+    padding: 0em;
+    margin-top: 2em;
+  }
+}
 
 .login-form {
   font-family: Poppins;
@@ -18,10 +24,10 @@
   background-color: #f2d7ee;
   border-radius: 8px;
   box-shadow: 0 0 10p #f2d7ee;
-  display: flex; /* Utiliza flexbox para centrar los elementos */
-  flex-direction: column; /* Alinea los elementos en una columna */
-  justify-content: center; /* Centra verticalmente los elementos */
-  align-items: center; /* Centra horizontalmente los elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .login-form .alert-error {
   color: #ff0000;
@@ -68,4 +74,15 @@
 }
 .login-form .btn:hover {
   background-color: #45a049;
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .login-form .login label {
+    font-size: 20px;
+  }
+  .login-form .forgot-link {
+    font-size: 20px;
+  }
+  .login-form .btn {
+    font-size: 18px;
+  }
 }

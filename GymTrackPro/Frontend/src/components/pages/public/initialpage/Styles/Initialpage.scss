@@ -38,13 +38,12 @@
     font-weight: bold;
     font-size: 72px;
     font-family: Poppins;
-    top: 5em;
+    top: 40vh;
     left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
     transform: translate(
       -50%,
       -50%
     ); /* Centra el elemento horizontal y verticalmente */
-    margin-bottom: 20px; /* Espacio entre el texto y el botón */
   }
 
   .btn-initial {
@@ -71,21 +70,32 @@
 
   /*pantallas hasta 768px de ancho */
   @media screen and (max-width: 768px) {
-    .initial {
-      .text {
-        font-size: 40px;
-        color: red;
+    .desktop-img {
+      display: none;
+    }
 
-        .btn-initial {
-          font-size: 20px;
-        }
+    .mobile-img {
+      display: block;
+    }
+    .text {
+      font-size: 40px;
+
+      .btn-initial {
+        font-size: 20px;
       }
     }
   }
   /*pantallas hasta 1200px de ancho */
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .desktop-img {
+      display: none;
+    }
+
+    .mobile-img {
+      display: block;
+    }
   }
   /*pantallas más de  1200px de ancho */
-  @media screen and (min-width: 1200px) {
+  @media screen and (max-width: 1200px) {
   }
 }

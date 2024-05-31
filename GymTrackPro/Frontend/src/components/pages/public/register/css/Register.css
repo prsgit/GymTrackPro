@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@media screen and (max-width: 768px) {
+  .layout-content {
+    padding: 2em;
+  }
+}
+
 .main-content .register-form {
   font-family: Poppins;
   max-width: 400px;
@@ -54,4 +60,9 @@
 }
 .main-content .register-form .btn:hover {
   background-color: #45a049;
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .main-content .register-form .register label {
+    font-size: 22px;
+  }
 }

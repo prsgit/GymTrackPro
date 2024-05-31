@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./css/Forgot.css";
-// import { Navigate } from "react-router-dom";
 
 const Forgot = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +23,7 @@ const Forgot = () => {
         setEnviando(false);
         setEmail("");
       }, 2000);
-      return; // Detener la ejecución si el correo electrónico no es válido
+      return;
     } else {
       setEmail("error");
       setTimeout(() => {
@@ -57,8 +56,8 @@ const Forgot = () => {
               type="email"
               id="email"
               name="email"
-              value={email} // Asignamos el valor del estado al input.
-              onChange={handleEmailChange} // Manejamos el cambio del input.
+              value={email}
+              onChange={handleEmailChange}
               disabled={enviando} // Deshabilita el input mientras se está enviando el formulario.
             />
             <span className="info">

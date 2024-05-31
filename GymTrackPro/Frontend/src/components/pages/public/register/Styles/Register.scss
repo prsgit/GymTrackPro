@@ -1,5 +1,11 @@
 @import "../../../../variables/Variables.scss";
 
+.layout-content {
+  @media screen and (max-width: 768px) {
+    padding: 2em;
+  }
+}
+
 .main-content {
   .register-form {
     font-family: Poppins;
@@ -62,6 +68,13 @@
 
     .btn:hover {
       background-color: $success-hover;
+    }
+
+    // /*pantallas hasta 1200px de ancho */
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
+      .register label {
+        font-size: 22px;
+      }
     }
   }
 }

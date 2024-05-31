@@ -10,6 +10,11 @@
   .alert-error {
     color: $white;
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 0em;
+    margin-top: 2em;
+  }
 }
 
 .login-form {
@@ -21,10 +26,10 @@
   background-color: $pale-purple;
   border-radius: 8px;
   box-shadow: 0 0 10p $pale-purple;
-  display: flex; /* Utiliza flexbox para centrar los elementos */
-  flex-direction: column; /* Alinea los elementos en una columna */
-  justify-content: center; /* Centra verticalmente los elementos */
-  align-items: center; /* Centra horizontalmente los elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .alert-error {
     color: $error;
@@ -78,5 +83,20 @@
 
   .btn:hover {
     background-color: $success-hover;
+  }
+
+  // /*pantallas hasta 1200px de ancho */
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .login label {
+      font-size: 20px;
+    }
+
+    .forgot-link {
+      font-size: 20px;
+    }
+
+    .btn {
+      font-size: 18px;
+    }
   }
 }

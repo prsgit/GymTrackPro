@@ -33,10 +33,9 @@
   font-weight: bold;
   font-size: 72px;
   font-family: Poppins;
-  top: 5em;
+  top: 40vh;
   left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
   transform: translate(-50%, -50%); /* Centra el elemento horizontal y verticalmente */
-  margin-bottom: 20px; /* Espacio entre el texto y el botón */
 }
 .initial .btn-initial {
   padding: 10px 20px;
@@ -59,11 +58,24 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 768px) {
-  .initial .initial .text {
-    font-size: 40px;
-    color: red;
+  .initial .desktop-img {
+    display: none;
   }
-  .initial .initial .text .btn-initial {
+  .initial .mobile-img {
+    display: block;
+  }
+  .initial .text {
+    font-size: 40px;
+  }
+  .initial .text .btn-initial {
     font-size: 20px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .initial .desktop-img {
+    display: none;
+  }
+  .initial .mobile-img {
+    display: block;
   }
 }

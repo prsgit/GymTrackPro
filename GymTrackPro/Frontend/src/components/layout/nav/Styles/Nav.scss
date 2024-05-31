@@ -80,8 +80,8 @@
   /* Estilos para dispositivos móviles */
   @media screen and (max-width: 768px) {
     height: auto; /* Altura automática para acomodar el contenido */
-    width: 100%;
-    padding: 10px; /* Espaciado interno */
+    width: auto;
+    padding: 10px;
     justify-content: flex-start; /* Alinear elementos a la izquierda */
     flex-direction: column;
 

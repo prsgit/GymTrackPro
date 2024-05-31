@@ -1,6 +1,6 @@
 import "./css/Initialpage.css";
-// import initial from "../../../../assets/image/initial.jpg";
-import gym from "../../../../assets/image/initial-mobile.jpg";
+import initial from "../../../../assets/image/initial-mobile.jpg";
+import gym from "../../../../assets/image/initial.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Initialpage = () => {
@@ -14,6 +14,7 @@ const Initialpage = () => {
     <>
       <div className="initial">
         <img className="desktop-img" src={gym} alt="front-cover" />
+        <img className="mobile-img" src={initial} alt="front-cover" />
 
         <span className="text">
           Tu transformación comienza aquí, tan sólo estás a un click!
