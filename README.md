@@ -63,4 +63,4 @@ Licencia
 MIT
 
 ##### Agradecimientos:
-##### Doy las gracias a Cristina y Francisco profesores de Codespace por su apoyo durante el proceso.
+##### A Cristina y Francisco profesores de Codespace por su apoyo durante el proceso.
