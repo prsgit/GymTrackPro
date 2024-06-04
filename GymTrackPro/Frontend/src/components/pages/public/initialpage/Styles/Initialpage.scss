@@ -38,7 +38,7 @@
     font-weight: bold;
     font-size: 72px;
     font-family: Poppins;
-    top: 40vh;
+    top: 50vh;
     left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
     transform: translate(
       -50%,
@@ -74,6 +74,10 @@
       display: none;
     }
 
+    .tablet-img {
+      display: none;
+    }
+
     .mobile-img {
       display: block;
     }
@@ -91,11 +95,18 @@
       display: none;
     }
 
-    .mobile-img {
+    .tablet-img {
       display: block;
     }
   }
   /*pantallas más de  1200px de ancho */
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 1200px) {
+    .desktop-img {
+      display: block;
+    }
+
+    .tablet-img {
+      display: none;
+    }
   }
 }

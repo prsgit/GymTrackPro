@@ -10,12 +10,12 @@
   .carousel {
     width: 100%;
     max-width: 800px; /* Ancho máximo del carrusel */
-    margin: 20px auto 60px !important; /* Centrar el carrusel horizontalmente */
+    margin: 20px auto 60px !important;
 
     .slide {
-      display: flex; /* Usar flexbox */
-      justify-content: center; /* Centrar horizontalmente */
-      align-items: center; /* Centrar verticalmente */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Estilos para las imágenes dentro del carrusel */
@@ -24,16 +24,16 @@
       max-height: 450px;
       border: 1px solid black;
       border-radius: 10px;
-      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
-      transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+      box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease;
     }
 
     .carousel-slider .slide img {
-      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8); /* Aumentar la intensidad de la sombra en la imagen activa */
+      box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.8);
     }
 
     .carousel-slider .slide:not(.selected) img {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Reducir la intensidad de la sombra en las imágenes inactivas */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
 
     /* Estilos para los controles de navegación del carrusel */
@@ -45,8 +45,8 @@
 
     /* Estilos para la barra de navegación del carrusel */
     .carousel-status {
-      display: none; /* Ocultar el texto del número de diapositiva */
-      position: relative; /* Establecer posición relativa */
+      display: none;
+      position: relative;
     }
 
     /* Media queries*/

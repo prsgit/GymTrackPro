@@ -33,7 +33,7 @@
   font-weight: bold;
   font-size: 72px;
   font-family: Poppins;
-  top: 40vh;
+  top: 50vh;
   left: 52%; /* Coloca el elemento a la mitad del ancho del contenedor */
   transform: translate(-50%, -50%); /* Centra el elemento horizontal y verticalmente */
 }
@@ -61,6 +61,9 @@
   .initial .desktop-img {
     display: none;
   }
+  .initial .tablet-img {
+    display: none;
+  }
   .initial .mobile-img {
     display: block;
   }
@@ -75,7 +78,15 @@
   .initial .desktop-img {
     display: none;
   }
-  .initial .mobile-img {
+  .initial .tablet-img {
     display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .initial .desktop-img {
+    display: block;
+  }
+  .initial .tablet-img {
+    display: none;
   }
 }

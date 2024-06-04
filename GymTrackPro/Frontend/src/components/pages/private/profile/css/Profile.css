@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .main-content .alert-success {
   font-weight: bold;
@@ -16,13 +15,13 @@
   background-color: #f2d7ee;
   border-radius: 8px;
   box-shadow: 0 0 10p #f2d7ee;
-  display: flex; /* Utiliza flexbox para centrar los elementos */
-  flex-direction: column; /* Alinea los elementos en una columna */
-  justify-content: center; /* Centra verticalmente los elementos */
-  align-items: center; /* Centra horizontalmente los elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .main-content .profile-form .main-content {
-  margin-bottom: 50px; /* Ajusta este valor según el espacio adicional que desees */
+  margin-bottom: 50px;
 }
 .main-content .profile-form .profile {
   width: 100%;

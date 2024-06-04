@@ -37,7 +37,8 @@
   transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
 }
 .nav ul.logout-content .image-profile img {
-  max-height: 72px;
+  width: 4em;
+  height: 4em;
   border-radius: 50%;
 }
 .nav ul li {
@@ -69,8 +70,8 @@
     flex-direction: column;
   }
   .nav ul {
-    flex-direction: column; /* Alinear elementos verticalmente */
-    align-items: flex-start; /* Alinear elementos a la izquierda */
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
     width: 100%;
   }

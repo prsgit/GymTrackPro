@@ -13,10 +13,10 @@
   background-color: #f2d7ee;
   border-radius: 8px;
   box-shadow: 0 0 10p #f2d7ee;
-  display: flex; /* Utiliza flexbox para centrar los elementos */
-  flex-direction: column; /* Alinea los elementos en una columna */
-  justify-content: center; /* Centra verticalmente los elementos */
-  align-items: center; /* Centra horizontalmente los elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .main-content .register-form .alert-success {
   color: #4caf50;

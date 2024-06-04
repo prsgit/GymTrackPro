@@ -24,7 +24,7 @@ const Contact = () => {
       setTimeout(() => {
         setEmail("not_sended");
       }, 2000);
-      return; // Detener la ejecución si el correo electrónico no es válido
+      return;
     }
 
     let newEmail = form;

@@ -15,11 +15,10 @@
     background-color: $pale-purple;
     border-radius: 8px;
     box-shadow: 0 0 10p $pale-purple;
-    display: flex; /* Utiliza flexbox para centrar los elementos */
-    flex-direction: column; /* Alinea los elementos en una columna */
-    justify-content: center; /* Centra verticalmente los elementos */
-    align-items: center; /* Centra horizontalmente los elementos */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .alert-success {
       color: $success;
       font-weight: bold;

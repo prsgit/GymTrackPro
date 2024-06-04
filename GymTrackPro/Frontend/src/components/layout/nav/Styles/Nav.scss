@@ -43,7 +43,8 @@
 
       .image-profile {
         img {
-          max-height: 72px;
+          width: 4em;
+          height: 4em;
           border-radius: 50%;
         }
       }
@@ -86,8 +87,8 @@
     flex-direction: column;
 
     ul {
-      flex-direction: column; /* Alinear elementos verticalmente */
-      align-items: flex-start; /* Alinear elementos a la izquierda */
+      flex-direction: column;
+      align-items: flex-start;
       margin-top: 10px; /* Espacio entre la barra de navegación y el contenido superior */
       width: 100%;
 

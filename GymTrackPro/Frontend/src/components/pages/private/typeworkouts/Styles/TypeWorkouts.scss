@@ -48,8 +48,8 @@
       margin-top: 10px;
       border-radius: 8px;
       border: 1px solid black;
-      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); /* Aplicar sombra para simular relieve */
-      transition: box-shadow 0.3s ease; /* Agregar transición para suavizar el efecto */
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease;
       &:hover {
         transform: scale(1.1);
       }
@@ -107,7 +107,7 @@
     .icon {
       height: 32px;
       &:hover {
-        transform: scale(1.1); /* Aumentar el tamaño del elemento al 120% */
+        transform: scale(1.1);
       }
     }
   }
