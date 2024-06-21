@@ -62,5 +62,3 @@ npm start
 Licencia
 MIT
 
-##### Agradecimientos:
-##### A Cristina y Francisco profesores de Codespace por su apoyo durante el proceso.
